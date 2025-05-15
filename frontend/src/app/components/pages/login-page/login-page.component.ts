@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TitleComponent } from '../../partials/title/title.component';
 import { UserService } from '../../../services/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { InputContainerComponent } from "../../partials/input-container/input-container.component";
 import { InputValidationComponent } from "../../partials/input-validation/input-validation.component";
 import { TextInputComponent } from "../../partials/text-input/text-input.component";
@@ -11,7 +11,7 @@ import { DefaultButttonComponent } from "../../partials/default-buttton/default-
 
 @Component({
   selector: 'app-login-page',
-  imports: [CommonModule, ReactiveFormsModule, TitleComponent, TextInputComponent, DefaultButttonComponent],
+  imports: [CommonModule, ReactiveFormsModule, TitleComponent, TextInputComponent, DefaultButttonComponent, RouterModule],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })

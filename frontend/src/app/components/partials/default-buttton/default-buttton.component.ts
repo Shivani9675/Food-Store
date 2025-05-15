@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'default-buttton',
+  selector: 'default-button',
   imports: [CommonModule],
   templateUrl: './default-buttton.component.html',
   styleUrl: './default-buttton.component.css'

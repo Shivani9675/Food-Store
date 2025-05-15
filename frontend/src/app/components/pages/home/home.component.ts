@@ -7,6 +7,7 @@ import { SearchComponent } from "../../partials/search/search.component";
 import { TagsComponent } from "../../partials/tags/tags.component";
 import { NotFoundComponent } from '../../partials/not-found/not-found.component';
 import { Observable } from 'rxjs';
+import { StarRatingComponent } from '../../partials/star-rating/star-rating.component';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,9 @@ import { Observable } from 'rxjs';
     RouterModule,
     TagsComponent,
     TagsComponent,
-    NotFoundComponent
-  ],
+    NotFoundComponent,
+    StarRatingComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

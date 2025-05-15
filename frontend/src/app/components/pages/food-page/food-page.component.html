@@ -15,7 +15,9 @@
       <span class="favorite {{ food.favorite ? '' : 'not' }}"> ❤ </span>
     </div>
 
-    <div class="rating"></div>
+    <div class="rating">
+      <star-rating [stars]="food.stars" [size]="1.8"/>
+    </div>
 
     <div class="origins">
       <span *ngFor="let origin of food.origins">

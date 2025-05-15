@@ -7,7 +7,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.5,
-        imageUrl: 'images/food-1.jpg',
+        imageUrl: 'images/food/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -18,7 +18,7 @@ const sample_food = [
         favorite: true,
         origins: ['persia', 'middle east', 'china'],
         stars: 4.7,
-        imageUrl: 'images/food-2.jpg',
+        imageUrl: 'images/food/food-2.jpg',
         tags: ['SlowFood', 'Lunch'],
     },
     {
@@ -29,7 +29,7 @@ const sample_food = [
         favorite: false,
         origins: ['germany', 'us'],
         stars: 3.5,
-        imageUrl: 'images/food-3.jpg',
+        imageUrl: 'images/food/food-3.jpg',
         tags: ['FastFood', 'Hamburger'],
     },
     {
@@ -40,7 +40,7 @@ const sample_food = [
         favorite: true,
         origins: ['belgium', 'france'],
         stars: 3.3,
-        imageUrl: 'images/food-4.jpg',
+        imageUrl: 'images/food/food-4.jpg',
         tags: ['FastFood', 'Fry'],
     },
     {
@@ -51,7 +51,7 @@ const sample_food = [
         favorite: false,
         origins: ['india', 'asia'],
         stars: 3.0,
-        imageUrl: 'images/food-5.jpg',
+        imageUrl: 'images/food/food-5.jpg',
         tags: ['SlowFood', 'Soup'],
     },
     {
@@ -62,7 +62,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.0,
-        imageUrl: 'images/food-6.jpg',
+        imageUrl: 'images/food/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -73,7 +73,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.5,
-        imageUrl: 'images/food-1.jpg',
+        imageUrl: 'images/food/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -84,7 +84,7 @@ const sample_food = [
         favorite: true,
         origins: ['persia', 'middle east', 'china'],
         stars: 4.7,
-        imageUrl: 'images/food-2.jpg',
+        imageUrl: 'images/food/food-2.jpg',
         tags: ['SlowFood', 'Lunch'],
     },
     {
@@ -95,7 +95,7 @@ const sample_food = [
         favorite: false,
         origins: ['germany', 'us'],
         stars: 3.5,
-        imageUrl: 'images/food-3.jpg',
+        imageUrl: 'images/food/food-3.jpg',
         tags: ['FastFood', 'Hamburger'],
     },
     {
@@ -106,7 +106,7 @@ const sample_food = [
         favorite: true,
         origins: ['belgium', 'france'],
         stars: 3.3,
-        imageUrl: 'images/food-4.jpg',
+        imageUrl: 'images/food/food-4.jpg',
         tags: ['FastFood', 'Fry'],
     },
     {
@@ -117,7 +117,7 @@ const sample_food = [
         favorite: false,
         origins: ['india', 'asia'],
         stars: 3.0,
-        imageUrl: 'images/food-5.jpg',
+        imageUrl: 'images/food/food-5.jpg',
         tags: ['SlowFood', 'Soup'],
     },
     {
@@ -128,7 +128,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.0,
-        imageUrl: 'images/food-6.jpg',
+        imageUrl: 'images/food/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -139,7 +139,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.5,
-        imageUrl: 'images/food-1.jpg',
+        imageUrl: 'images/food/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -150,7 +150,7 @@ const sample_food = [
         favorite: true,
         origins: ['persia', 'middle east', 'china'],
         stars: 4.7,
-        imageUrl: 'images/food-2.jpg',
+        imageUrl: 'images/food/food-2.jpg',
         tags: ['SlowFood', 'Lunch'],
     },
     {
@@ -161,7 +161,7 @@ const sample_food = [
         favorite: false,
         origins: ['germany', 'us'],
         stars: 3.5,
-        imageUrl: 'images/food-3.jpg',
+        imageUrl: 'images/food/food-3.jpg',
         tags: ['FastFood', 'Hamburger'],
     },
     {
@@ -172,7 +172,7 @@ const sample_food = [
         favorite: true,
         origins: ['belgium', 'france'],
         stars: 3.3,
-        imageUrl: 'images/food-4.jpg',
+        imageUrl: 'images/food/food-4.jpg',
         tags: ['FastFood', 'Fry'],
     },
     {
@@ -183,7 +183,7 @@ const sample_food = [
         favorite: false,
         origins: ['india', 'asia'],
         stars: 3.0,
-        imageUrl: 'images/food-5.jpg',
+        imageUrl: 'images/food/food-5.jpg',
         tags: ['SlowFood', 'Soup'],
     },
     {
@@ -194,7 +194,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.0,
-        imageUrl: 'images/food-6.jpg',
+        imageUrl: 'images/food/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -205,7 +205,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.5,
-        imageUrl: 'images/food-1.jpg',
+        imageUrl: 'images/food/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -216,7 +216,7 @@ const sample_food = [
         favorite: true,
         origins: ['persia', 'middle east', 'china'],
         stars: 4.7,
-        imageUrl: 'images/food-2.jpg',
+        imageUrl: 'images/food/food-2.jpg',
         tags: ['SlowFood', 'Lunch'],
     },
     {
@@ -227,7 +227,7 @@ const sample_food = [
         favorite: false,
         origins: ['germany', 'us'],
         stars: 3.5,
-        imageUrl: 'images/food-3.jpg',
+        imageUrl: 'images/food/food-3.jpg',
         tags: ['FastFood', 'Hamburger'],
     },
     {
@@ -238,7 +238,7 @@ const sample_food = [
         favorite: true,
         origins: ['belgium', 'france'],
         stars: 3.3,
-        imageUrl: 'images/food-4.jpg',
+        imageUrl: 'images/food/food-4.jpg',
         tags: ['FastFood', 'Fry'],
     },
     {
@@ -249,7 +249,7 @@ const sample_food = [
         favorite: false,
         origins: ['india', 'asia'],
         stars: 3.0,
-        imageUrl: 'images/food-5.jpg',
+        imageUrl: 'images/food/food-5.jpg',
         tags: ['SlowFood', 'Soup'],
     },
     {
@@ -260,7 +260,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.0,
-        imageUrl: 'images/food-6.jpg',
+        imageUrl: 'images/food/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -271,7 +271,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.5,
-        imageUrl: 'images/food-1.jpg',
+        imageUrl: 'images/food/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -282,7 +282,7 @@ const sample_food = [
         favorite: true,
         origins: ['persia', 'middle east', 'china'],
         stars: 4.7,
-        imageUrl: 'images/food-2.jpg',
+        imageUrl: 'images/food/food-2.jpg',
         tags: ['SlowFood', 'Lunch'],
     },
     {
@@ -293,7 +293,7 @@ const sample_food = [
         favorite: false,
         origins: ['germany', 'us'],
         stars: 3.5,
-        imageUrl: 'images/food-3.jpg',
+        imageUrl: 'images/food/food-3.jpg',
         tags: ['FastFood', 'Hamburger'],
     },
     {
@@ -304,7 +304,7 @@ const sample_food = [
         favorite: true,
         origins: ['belgium', 'france'],
         stars: 3.3,
-        imageUrl: 'images/food-4.jpg',
+        imageUrl: 'images/food/food-4.jpg',
         tags: ['FastFood', 'Fry'],
     },
     {
@@ -315,7 +315,7 @@ const sample_food = [
         favorite: false,
         origins: ['india', 'asia'],
         stars: 3.0,
-        imageUrl: 'images/food-5.jpg',
+        imageUrl: 'images/food/food-5.jpg',
         tags: ['SlowFood', 'Soup'],
     },
     {
@@ -326,7 +326,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.0,
-        imageUrl: 'images/food-6.jpg',
+        imageUrl: 'images/food/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -337,7 +337,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.5,
-        imageUrl: 'images/food-1.jpg',
+        imageUrl: 'images/food/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -348,7 +348,7 @@ const sample_food = [
         favorite: true,
         origins: ['persia', 'middle east', 'china'],
         stars: 4.7,
-        imageUrl: 'images/food-2.jpg',
+        imageUrl: 'images/food/food-2.jpg',
         tags: ['SlowFood', 'Lunch'],
     },
     {
@@ -359,7 +359,7 @@ const sample_food = [
         favorite: false,
         origins: ['germany', 'us'],
         stars: 3.5,
-        imageUrl: 'images/food-3.jpg',
+        imageUrl: 'images/food/food-3.jpg',
         tags: ['FastFood', 'Hamburger'],
     },
     {
@@ -370,7 +370,7 @@ const sample_food = [
         favorite: true,
         origins: ['belgium', 'france'],
         stars: 3.3,
-        imageUrl: 'images/food-4.jpg',
+        imageUrl: 'images/food/food-4.jpg',
         tags: ['FastFood', 'Fry'],
     },
     {
@@ -381,7 +381,7 @@ const sample_food = [
         favorite: false,
         origins: ['india', 'asia'],
         stars: 3.0,
-        imageUrl: 'images/food-5.jpg',
+        imageUrl: 'images/food/food-5.jpg',
         tags: ['SlowFood', 'Soup'],
     },
     {
@@ -392,7 +392,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.0,
-        imageUrl: 'images/food-6.jpg',
+        imageUrl: 'images/food/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -403,7 +403,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.5,
-        imageUrl: 'images/food-1.jpg',
+        imageUrl: 'images/food/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -414,7 +414,7 @@ const sample_food = [
         favorite: true,
         origins: ['persia', 'middle east', 'china'],
         stars: 4.7,
-        imageUrl: 'images/food-2.jpg',
+        imageUrl: 'images/food/food-2.jpg',
         tags: ['SlowFood', 'Lunch'],
     },
     {
@@ -425,7 +425,7 @@ const sample_food = [
         favorite: false,
         origins: ['germany', 'us'],
         stars: 3.5,
-        imageUrl: 'images/food-3.jpg',
+        imageUrl: 'images/food/food-3.jpg',
         tags: ['FastFood', 'Hamburger'],
     },
     {
@@ -436,7 +436,7 @@ const sample_food = [
         favorite: true,
         origins: ['belgium', 'france'],
         stars: 3.3,
-        imageUrl: 'images/food-4.jpg',
+        imageUrl: 'images/food/food-4.jpg',
         tags: ['FastFood', 'Fry'],
     },
     {
@@ -447,7 +447,7 @@ const sample_food = [
         favorite: false,
         origins: ['india', 'asia'],
         stars: 3.0,
-        imageUrl: 'images/food-5.jpg',
+        imageUrl: 'images/food/food-5.jpg',
         tags: ['SlowFood', 'Soup'],
     },
     {
@@ -458,7 +458,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.0,
-        imageUrl: 'images/food-6.jpg',
+        imageUrl: 'images/food/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -469,7 +469,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.0,
-        imageUrl: 'images/food-6.jpg',
+        imageUrl: 'images/food/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -480,7 +480,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.5,
-        imageUrl: 'images/food-1.jpg',
+        imageUrl: 'images/food/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -491,7 +491,7 @@ const sample_food = [
         favorite: true,
         origins: ['persia', 'middle east', 'china'],
         stars: 4.7,
-        imageUrl: 'images/food-2.jpg',
+        imageUrl: 'images/food/food-2.jpg',
         tags: ['SlowFood', 'Lunch'],
     },
     {
@@ -502,7 +502,7 @@ const sample_food = [
         favorite: false,
         origins: ['germany', 'us'],
         stars: 3.5,
-        imageUrl: 'images/food-3.jpg',
+        imageUrl: 'images/food/food-3.jpg',
         tags: ['FastFood', 'Hamburger'],
     },
     {
@@ -513,7 +513,7 @@ const sample_food = [
         favorite: true,
         origins: ['belgium', 'france'],
         stars: 3.3,
-        imageUrl: 'images/food-4.jpg',
+        imageUrl: 'images/food/food-4.jpg',
         tags: ['FastFood', 'Fry'],
     },
     {
@@ -524,7 +524,7 @@ const sample_food = [
         favorite: false,
         origins: ['india', 'asia'],
         stars: 3.0,
-        imageUrl: 'images/food-5.jpg',
+        imageUrl: 'images/food/food-5.jpg',
         tags: ['SlowFood', 'Soup'],
     },
     {
@@ -535,7 +535,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.0,
-        imageUrl: 'images/food-6.jpg',
+        imageUrl: 'images/food/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -546,7 +546,7 @@ const sample_food = [
         favorite: false,
         origins: ['italy'],
         stars: 4.5,
-        imageUrl: 'images/food-1.jpg',
+        imageUrl: 'images/food/food-1.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
     },
     {
@@ -557,7 +557,7 @@ const sample_food = [
         favorite: true,
         origins: ['belgium', 'france'],
         stars: 3.3,
-        imageUrl: 'images/food-4.jpg',
+        imageUrl: 'images/food/food-4.jpg',
         tags: ['FastFood', 'Fry'],
     },
     {
@@ -568,13 +568,13 @@ const sample_food = [
         favorite: false,
         origins: ['india', 'asia'],
         stars: 3.0,
-        imageUrl: 'images/food-5.jpg',
+        imageUrl: 'images/food/food-5.jpg',
         tags: ['SlowFood', 'Soup'],
     },
 ]
 
 const sample_tags = [
-    { name: 'All', count: 6 },
+    { name: 'All', count: 52 },
     { name: 'FastFood', count: 4 },
     { name: 'Pizza', count: 2 },
     { name: 'Lunch', count: 3 },

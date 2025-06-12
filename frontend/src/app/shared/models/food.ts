@@ -4,8 +4,10 @@ export class Food {
     price!: number;
     tags?: string[];
     favorite!: boolean;
-    stars!: number;
+    rating!: number;
+    discount!:string;
     imageUrl!: string;
     origins!: string[];
-    cookTime!: string;
+    deliveryTime!: string;
+    description!:string;
 }

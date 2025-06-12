@@ -1,5 +1,28 @@
-<div *ngIf="tags">
-  <a *ngFor="let tag of tags" routerLink="/tag/{{ tag.name }}">
-    {{ tag.name }}({{ tag.count }})
-  </a>
+<div>
+  <div class="position-relative">
+    <div class="previous-next-wrapper">
+      <button class="previous-next-btn" [class.disabled]="!canScrollLeft">
+        <div class="previous-btn mr-12">
+          <img src="images/arrows/arrow-left-short.svg" alt="left-arrow" (click)="scrollLeft()">
+        </div>
+      </button>
+      <button class="previous-next-btn" [class.disabled]="!canScrollRight">
+        <div class="previous-btn">
+          <img src="images/arrows/arrow-right-short.svg" alt="right-arrow" (click)="scrollRight()">
+        </div>
+      </button>
+    </div>
+    <div>
+      <div class="slider-container">
+        <h2 class="m-l-112"><strong>What's on your mind?</strong></h2> 
+        <div>
+          <div class="slider" #slider (scroll)="onScroll()">
+            <div class="slide" *ngFor="let item of categories" routerLink="/category/{{ item.id }}">
+              <img [src]="item.imageUrl" [alt]="item.label" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

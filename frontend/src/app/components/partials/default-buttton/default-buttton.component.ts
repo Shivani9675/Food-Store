@@ -10,7 +10,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class DefaultButttonComponent implements OnInit {
   @Input() type: 'submit' | 'button' = 'submit';
   @Input() text: string = 'Submit';
-  @Input() bgColor = '#e72929';
+  @Input() bgColor = '#cc0000';
   @Input() color = 'white';
   @Input() fontSizeRem = 1.3;
   @Input() widthRem = 12;

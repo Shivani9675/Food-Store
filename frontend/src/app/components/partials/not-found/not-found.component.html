@@ -1,4 +1,18 @@
-<div *ngIf="visible">
-  {{ notFoundMessage }}
-  <a [routerLink]="resetLinkRoute">{{ resetLinkText }}</a>
+<div class="not-found-wrapper" *ngIf="visible">
+  <div class="not-found-image-wrapper">
+    <img [src]="notFoundImage" alt="image" width="250px">
+  </div>
+  <div class="not-found-title">
+    {{ notFoundTitle }}
+  </div>
+  <p class="not-found-message">
+    {{ notFoundMessage }}
+  </p>
+  <div class="not-found-btn-wrapper">
+    <div class="not-found-btn">
+      <a [routerLink]="resetLinkRoute">
+        {{ resetLinkText }}
+      </a>
+    </div>
+  </div>
 </div>

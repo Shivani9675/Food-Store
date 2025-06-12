@@ -16,6 +16,6 @@ export const appConfig: ApplicationConfig = {
       withInterceptors([loadingInterceptor, authInterceptor])
     ),
     provideAnimations(),
-    importProvidersFrom(ToastrModule.forRoot({ timeOut: 3000, positionClass: 'toast-top-right', newestOnTop: false }))
+    importProvidersFrom(ToastrModule.forRoot({ timeOut: 3000, positionClass: 'toast-bottom-center', newestOnTop: false, closeButton: true, toastClass: 'custom-toast-class', maxOpened: 1, autoDismiss: true, preventDuplicates: true }))
   ]
 };

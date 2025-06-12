@@ -1,51 +1,67 @@
-<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
-<app-not-found
-  [visible]="!cart || !cart.items.length"
-  notFoundMessage="Cart Page Is Empty!"
-  resetLinkText="Go To Homepage"
-></app-not-found>
+<div *ngIf="cart.items.length">
+  <app-title title="Your Cart" margin="1.5rem 0 0 3.1rem"></app-title>
+</div>
+<app-not-found [visible]="!cart || !cart.items.length" notFoundImage="images/not-found/cart-empty.png"
+  notFoundTitle="Your cart is empty" notFoundMessage="You can go to home page to view more foods"
+  resetLinkText="See Foods Near You">
+</app-not-found>
 
+<div class="my-5" *ngIf="cart && cart.items.length">
+  <div class="checkout-wrapper">
+    <div class="subtotal-wrapper">
+      <div class="d-flex">
+        <span class="fw-6">
+          Subtotal
+          <span class="fw-4"> ({{ cart.items.length }} {{ cart.items.length === 1 ? 'item' : 'items' }}) : </span>
+          <span class="fw-7">{{ cart.totalPrice | currency: 'INR' }}</span>
+        </span>
+      </div>
+      <div class="saving-wrapper">
+        <span class="fw-4">Savings: </span><span class="fw-7">₹25.00</span>
+      </div>
+    </div>
+    <div class="checkout-btn-section">
+      <a routerLink="/checkout" class="checkout-btn">Checkout</a>
+    </div>
+  </div>
+</div>
 <div *ngIf="cart && cart.items.length" class="container">
   <ul>
     <li *ngFor="let cartItem of cart.items">
       <div>
         <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" />
       </div>
-      <div>
+      <div class="d-flex text-align-left">
         <a routerLink="/food/{{ cartItem.food.id }}">
           {{ cartItem.food.name }}
         </a>
+        <span class="fw-6">{{ cartItem.food.price | currency: 'INR' }}</span>
       </div>
-      <div>
-        <select
-          #quantitySelect
-          [value]="cartItem.quantity"
-          (change)="changeQuantity(cartItem, quantitySelect.value)"
-        >
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-      <div>
-        {{ cartItem.price | currency }}
-      </div>
-
-      <div>
-        <button class="remove-button" (click)="removeFromCart(cartItem)">
-          Remove
+      <div class="add-btn-center-container">
+        <button class="add-btn" (click)="decreaseQuantity(cartItem)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            class="CtaOnDeck___StyledMinusIcon-sc-orwifk-9 dPdCkk">
+            <path
+              d="M19 13H5C4.448 13 4 12.553 4 12C4 11.447 4.448 11 5 11H19C19.553 11 20 11.447 20 12C20 12.553 19.553 13 19 13Z">
+            </path>
+          </svg>
         </button>
+        <div class="cart-quantity">{{ cartItem.quantity }}</div>
+        <button class="add-btn" (click)="increaseQuantity(cartItem)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            class="CtaOnDeck___StyledPlusIcon-sc-orwifk-12 kyqQMg">
+            <path
+              d="M19 11H13V5C13 4.447 12.552 4 12 4C11.448 4 11 4.447 11 5V11H5C4.448 11 4 11.447 4 12C4 12.553 4.448 13 5 13H11V19C11 19.553 11.448 20 12 20C12.552 20 13 19.553 13 19V13H19C19.552 13 20 12.553 20 12C20 11.447 19.552 11 19 11Z">
+            </path>
+          </svg>
+        </button>
+      </div>
+      <div class="text-align-right">
+        {{ cartItem.price | currency: 'INR' }}
+      </div>
+      <div class="remove-button" (click)="removeFromCart(cartItem)">
+        Delete
       </div>
     </li>
   </ul>
-  <div class="checkout">
-    <div>
-      <div class="foods-count">{{ cart.totalCount }}</div>
-      <div class="total-price">{{ cart.totalPrice | currency }}</div>
-    </div>
-
-    <a routerLink="/checkout">Proceed to Checkout</a>
-  </div>
 </div>

@@ -11,10 +11,13 @@ import { RouterModule } from '@angular/router';
 export class NotFoundComponent {
   @Input() visible = false;
 
-  @Input() notFoundMessage = 'Nothing Found';
+  @Input() notFoundImage = 'images/not-found/not-found.png';
+
+  @Input() notFoundTitle = 'Page not found';
+
+  @Input() notFoundMessage = `Uh-oh! Looks like the page you are trying to access, doesn't exist. Please start afresh.`;
 
   @Input() resetLinkText = 'Reset';
 
   @Input() resetLinkRoute = '/';
-
 }

@@ -8,11 +8,14 @@ import { CheckoutPageComponent } from './components/pages/checkout-page/checkout
 import { authGuard } from './auth/guards/auth.guard';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { FoodCategoryPageComponent } from './components/pages/food-category-page/food-category-page.component';
+import { SearchComponent } from './components/partials/search/search.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'search/:searchTerm', component: HomeComponent },
-    { path: 'tag/:tag', component: HomeComponent },
+    { path: 'search', component: SearchComponent },
+    { path: 'search/:searchTerm', component: SearchComponent },
+    { path: 'category/:id', component: FoodCategoryPageComponent },
     { path: 'food/:id', component: FoodPageComponent },
     { path: 'cart-page', component: CartPageComponent },
     { path: 'login', component: LoginPageComponent },

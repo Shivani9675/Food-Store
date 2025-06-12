@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Food } from '../shared/models/food';
-import { sample_food, sample_tags } from '../../data';
-import { Tag } from '../shared/models/tag';
 import { HttpClient } from '@angular/common/http';
-import { FOODS_BY_ID_URL, FOODS_BY_SEARCH_URL, FOODS_BY_TAG_URL, FOODS_TAGS_URL, FOODS_URL } from '../shared/constants/urls';
+import { FOODS_BY_ID_URL, FOODS_BY_SEARCH_URL, FOODS_SUBCATEGORIES_BY_CATEGORY_ID_URL, FOODS_CATEGORIES_URL, FOODS_URL } from '../shared/constants/urls';
 import { Observable } from 'rxjs';
+import { Categories } from '../shared/models/Categories';
+import { SubCategories } from '../shared/models/SubCategories';
 
 @Injectable({
   providedIn: 'root'
@@ -21,14 +21,12 @@ export class FoodService {
     return this.http.get<Food[]>(FOODS_BY_SEARCH_URL + searchTerm);
   }
 
-  getAllTags(): Observable<Tag[]> {
-    return this.http.get<Tag[]>(FOODS_TAGS_URL);
+  getAllCategories(): Observable<any[]> {
+    return this.http.get<any[]>(FOODS_CATEGORIES_URL);
   }
 
-  getAllFoodsByTag(tag: string): Observable<Food[]> {
-    return tag == 'All' ?
-      this.getAll() :
-      this.http.get<Food[]>(FOODS_BY_TAG_URL + tag);
+  getSubCategoriesByCategoryId(categoryId: string): Observable<SubCategories[]> {
+    return this.http.get<SubCategories[]>(FOODS_SUBCATEGORIES_BY_CATEGORY_ID_URL + categoryId);
   }
 
   getFoodById(foodId: string): Observable<Food> {

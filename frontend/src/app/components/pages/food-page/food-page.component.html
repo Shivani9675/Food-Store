@@ -1,7 +1,6 @@
 <app-not-found
   [visible]="!food"
-  notFoundMessage="Food Not Found"
-  resetLinkText="Back To Homepage"
+  resetLinkText="Home"
 >
 </app-not-found>
 <div *ngIf="food" class="container">
@@ -16,7 +15,7 @@
     </div>
 
     <div class="rating">
-      <star-rating [stars]="food.stars" [size]="1.8"/>
+      <star-rating [stars]="food.rating" [size]="1.8"/>
     </div>
 
     <div class="origins">
@@ -33,13 +32,13 @@
 
     <div class="cook-time">
       <span>
-        Time to cook about <strong>{{ food.cookTime }}</strong> minutes
+        Time to cook about <strong>{{ food.deliveryTime }}</strong> minutes
       </span>
     </div>
 
     <div class="price">
       <span>
-        {{ food.price | currency }}
+        {{ food.price | currency: 'INR' }}
       </span>
     </div>
 

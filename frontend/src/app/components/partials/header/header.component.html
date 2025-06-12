@@ -1,13 +1,43 @@
 <header>
   <div class="container">
-    <a routerLink="/" class="logo">Food Mine!</a>
+    <a routerLink="/" class="logo"><img src="images/logo/header-logo.png" alt="" height="35px"></a>
     <nav>
       <ul>
+        <li>
+          <a routerLink="/search" class="cart-link">
+            <img src="images/header/search-icon.svg" class="default-icon" alt="" width="34">
+            <img src="images/header/search-red-icon.svg" class="hover-icon" alt="" width="34">
+            Search
+          </a>
+        </li>
+        <li class="offer-wrapper">
+          <a (click)="goToOffers()" class="cart-link p-1">
+            <img src="images/header/offer-icon.svg" class="default-icon" alt="" width="42">
+            <img src="images/header/offer-red-icon.svg" class="hover-icon" alt="" width="42">
+            Offers
+            <span class="new-offer">NEW</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/" class="cart-link">
+            <img src="images/header/help-icon.svg" class="default-icon" alt="" height="22">
+            <img src="images/header/help-red-icon.svg" class="hover-icon" alt="" height="22">
+            Help
+          </a>
+        </li>
         <li *ngIf="!isAuth">
-          <a routerLink="/login">Login</a>
+          <a routerLink="/login" class="cart-link">
+            <img src="images/header/person-icon.svg" class="default-icon" alt="" width="32">
+            <img src="images/header/person-red-icon.svg" class="hover-icon" alt="" width="32">
+            Sign In
+          </a>
         </li>
         <li *ngIf="isAuth" class="menu-container">
-          <a routerLink="/dashboard">{{ user.name }}</a>
+          <a routerLink="/dashboard" class="cart-link">
+            <img src="images/header/person-icon.svg" class="default-icon" alt="" width="32">
+            <img src="images/header/person-red-icon.svg" class="hover-icon" alt="" width="32">
+            {{ user.name }}
+          </a>
           <div class="menu">
             <a routerLink="/profile">Profile</a>
             <a routerLink="/orders">Orders</a>
@@ -15,8 +45,12 @@
           </div>
         </li>
         <li>
-          <a routerLink="/cart-page">
-            Cart <span *ngIf="cartQuantity">{{ cartQuantity }}</span>
+          <a routerLink="/cart-page" class="cart-link">
+            <img src="images/header/cart-icon.png" class="default-icon" alt="" height="25">
+            <img src="images/header/cart-red-icon.png" class="hover-icon" alt="" height="25">
+            Cart
+            <div class="badge">{{ cartQuantity }}</div>
+            <!-- <span *ngIf="cartQuantity">{{ cartQuantity }}</span> -->
           </a>
         </li>
       </ul>

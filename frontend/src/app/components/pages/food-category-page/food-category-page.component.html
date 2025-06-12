@@ -1,0 +1,247 @@
+<div class="food-category-main-wrapper">
+    <div class="food-category-title-wrappper">
+        <div>
+            <div class="food-category-title">{{selectedCategories?.name}}</div>
+            <div class="food-category-description">{{selectedCategories?.description}}</div>
+        </div>
+    </div>
+    <div class="food-category-itmes-wrapper">
+        <div>
+            <div class="food-category-filter-wrapper">
+                <div class="food-filter-wrapper">
+                    <div class="food-filter-btn">
+                        <div class="food-filter-title">Filter</div>
+                        <img class="m-t-2" src="images/filter-icon/filter-icon.webp" alt="" height="20px" width="20px">
+                    </div>
+                </div>
+                <div class="food-filter-wrapper">
+                    <div class="food-filter-btn">
+                        <div class="food-filter-title">Sort By</div>
+                        <img class="m-t-5" src="images/arrows/down-arrow.png" alt="" height="14px" width="14px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="food-heading">
+                <h2>Foods to explore</h2>
+            </div>
+            <div class="foods-list-wrapper">
+                <div class="food-list-card" *ngFor="let categories of subCategories">
+                    <a>
+                        <div class="food-list-container">
+                            <div class="food-img-container">
+                                <div class="food-img-wrapper">
+                                    <div class="food-img" (click)="openSubCategoryDetailDialog(categories)">
+                                        <img src="{{categories.imageUrl}}" alt="">
+                                        <div class="food-offer-section">
+                                            <div class="food-offer">{{categories.discount}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="food-title">{{categories.name}}</div>
+                                <div class="food-card-subtext-container">
+                                    <div class="m-t-2">
+                                        <img src="images/stars/star-circle-fill.svg" alt="" height="30" width="30">
+                                    </div>
+                                    <div class="food-card-time-container">
+                                        <span>{{categories.rating}} • {{categories.deliveryTime}} mins</span>
+                                    </div>
+                                </div>
+                                <div class="food-card-description-container">
+                                    <div class="food-card-subdescription">{{categories.description}}</div>
+                                    <div class="food-card-subdescription">{{categories.location}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- <div class="food-list-card">
+                    <a>
+                        <div class="food-list-container">
+                            <div class="food-img-container">
+                                <div class="food-img-wrapper">
+                                    <div class="food-img">
+                                        <img src="images/coffee/coffee-img-2.jpg" alt="">
+                                        <div class="food-offer-section">
+                                            <div class="food-offer">₹75 OFF ABOVE ₹199</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="food-title">Indian Coffee House</div>
+                                <div class="food-card-subtext-container">
+                                    <div class="m-t-2">
+                                        <img src="images/stars/star-circle-fill.svg" alt="" height="30" width="30">
+                                    </div>
+                                    <div class="food-card-time-container">
+                                        <span>4.5 • 50-55 mins</span>
+                                    </div>
+                                </div>
+                                <div class="food-card-description-container">
+                                    <div class="food-card-subdescription">South Indian, Chinese, Fast Food, Beverages
+                                    </div>
+                                    <div class="food-card-subdescription">Khajri Chowk</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="food-list-card">
+                    <a>
+                        <div class="food-list-container">
+                            <div class="food-img-container">
+                                <div class="food-img-wrapper">
+                                    <div class="food-img">
+                                        <img src="images/coffee/coffee-img-3.png" alt="">
+                                        <div class="food-offer-section">
+                                            <div class="food-offer">₹75 OFF ABOVE ₹199</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="food-title">Indian Coffee House</div>
+                                <div class="food-card-subtext-container">
+                                    <div class="m-t-2">
+                                        <img src="images/stars/star-circle-fill.svg" alt="" height="30" width="30">
+                                    </div>
+                                    <div class="food-card-time-container">
+                                        <span>4.5 • 50-55 mins</span>
+                                    </div>
+                                </div>
+                                <div class="food-card-description-container">
+                                    <div class="food-card-subdescription">South Indian, Chinese, Fast Food, Beverages
+                                    </div>
+                                    <div class="food-card-subdescription">Khajri Chowk</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="food-list-card">
+                    <a>
+                        <div class="food-list-container">
+                            <div class="food-img-container">
+                                <div class="food-img-wrapper">
+                                    <div class="food-img">
+                                        <img src="images/coffee/coffee-img-4.png" alt="">
+                                        <div class="food-offer-section">
+                                            <div class="food-offer">₹75 OFF ABOVE ₹199</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="food-title">Indian Coffee House</div>
+                                <div class="food-card-subtext-container">
+                                    <div class="m-t-2">
+                                        <img src="images/stars/star-circle-fill.svg" alt="" height="30" width="30">
+                                    </div>
+                                    <div class="food-card-time-container">
+                                        <span>4.5 • 50-55 mins</span>
+                                    </div>
+                                </div>
+                                <div class="food-card-description-container">
+                                    <div class="food-card-subdescription">South Indian, Chinese, Fast Food, Beverages
+                                    </div>
+                                    <div class="food-card-subdescription">Khajri Chowk</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="food-list-card">
+                    <a>
+                        <div class="food-list-container">
+                            <div class="food-img-container">
+                                <div class="food-img-wrapper">
+                                    <div class="food-img">
+                                        <img src="images/coffee/coffee-img-5.png" alt="">
+                                        <div class="food-offer-section">
+                                            <div class="food-offer">₹75 OFF ABOVE ₹199</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="food-title">Indian Coffee House</div>
+                                <div class="food-card-subtext-container">
+                                    <div class="m-t-2">
+                                        <img src="images/stars/star-circle-fill.svg" alt="" height="30" width="30">
+                                    </div>
+                                    <div class="food-card-time-container">
+                                        <span>4.5 • 50-55 mins</span>
+                                    </div>
+                                </div>
+                                <div class="food-card-description-container">
+                                    <div class="food-card-subdescription">South Indian, Chinese, Fast Food, Beverages
+                                    </div>
+                                    <div class="food-card-subdescription">Khajri Chowk</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Food Detail Dialog -->
+<div class="dialog-backdrop" *ngIf="selectedSubCategory">
+    <div class="dialog" (click)="$event.stopPropagation()">
+        <img [src]="selectedSubCategory.imageUrl" alt="{{ selectedSubCategory.name }}" />
+        <div class="d-flex">
+            <div class="flex-column">
+                <div class="selected-food-name">{{ selectedSubCategory.name }}</div>
+                <div class="selected-food-price"> <span>{{ selectedSubCategory.price | currency: 'INR'}}</span></div>
+                <div class="selected-food-cook-time">
+                    Time to cook about <strong>{{ selectedSubCategory.deliveryTime }}</strong> minutes
+                </div>
+            </div>
+            <div>
+                <div class="selected-food-add-to-cart-wrapper">
+                    <!-- Show "Add" if not in cart -->
+                    <div *ngIf="!isInCart(selectedSubCategory.id)" class="add-cart-btn"
+                        (click)="changeQuantity(selectedSubCategory)">
+                        <div class="add-cart add-text">
+                            Add
+                        </div>
+                    </div>
+                    <!-- Show quantity controls if in cart -->
+                    <div *ngIf="isInCart(selectedSubCategory.id)" class="add-cart-btn">
+                        <div class="add-cart add-btn-container">
+                            <div class="add-btn" (click)="decreaseQuantity(selectedSubCategory.id)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    class="CtaOnDeck___StyledMinusIcon-sc-orwifk-9 dPdCkk">
+                                    <path
+                                        d="M19 13H5C4.448 13 4 12.553 4 12C4 11.447 4.448 11 5 11H19C19.553 11 20 11.447 20 12C20 12.553 19.553 13 19 13Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="cart-quantity">{{ getQuantity(selectedSubCategory.id) }}</div>
+                            <div class="add-btn" (click)="increaseQuantity(selectedSubCategory.id)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    class="CtaOnDeck___StyledPlusIcon-sc-orwifk-12 kyqQMg">
+                                    <path
+                                        d="M19 11H13V5C13 4.447 12.552 4 12 4C11.448 4 11 4.447 11 5V11H5C4.448 11 4 11.447 4 12C4 12.553 4.448 13 5 13H11V19C11 19.553 11.448 20 12 20C12.552 20 13 19.553 13 19V13H19C19.552 13 20 12.553 20 12C20 11.447 19.552 11 19 11Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="selected-food-description">
+            {{selectedSubCategory.description}}
+        </div>
+        <button class="close-food-dialog" (click)="closeFoodDetailDialog()">
+            <img src="images/close/close.svg" alt="">
+        </button>
+    </div>
+</div>

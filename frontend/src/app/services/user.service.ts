@@ -31,7 +31,6 @@ export class UserService {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
-            `Welcome to the Foodmine ${user.name}!`,
             'Login Successful'
           )
         },
@@ -46,7 +45,6 @@ export class UserService {
     return this.http.post<User>(USER_REGISTER_URL, userRegister).pipe(
       tap({
         next: (user) => {
-          debugger
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(

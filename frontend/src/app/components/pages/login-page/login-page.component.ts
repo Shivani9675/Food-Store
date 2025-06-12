@@ -4,8 +4,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { TitleComponent } from '../../partials/title/title.component';
 import { UserService } from '../../../services/user.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { InputContainerComponent } from "../../partials/input-container/input-container.component";
-import { InputValidationComponent } from "../../partials/input-validation/input-validation.component";
 import { TextInputComponent } from "../../partials/text-input/text-input.component";
 import { DefaultButttonComponent } from "../../partials/default-buttton/default-buttton.component";
 

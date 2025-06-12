@@ -1,7 +1,7 @@
 .container {
     margin-top: 1rem;
     display: flex;
-    margin: 0 2rem 6rem 2rem;
+    margin: 0 2rem 2rem 2rem;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -34,10 +34,10 @@ form {
 
 button {
     color: white;
-    background-color: #e72929;
+    background-color: #cc0000;
     width: 100%;
     height: 3rem;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     font-size: 1.3rem;
     border: none;
     border-radius: 0.5rem;
@@ -45,6 +45,6 @@ button {
 }
 
 button:hover {
-    opacity: 1;
+    /* opacity: 1; */
     cursor: pointer;
 }

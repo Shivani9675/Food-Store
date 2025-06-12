@@ -1,0 +1,73 @@
+<div class="footer">
+    <div class="footer-panel1">
+        <div class="subscribe"> Subscribe newsletter </div>
+
+        <form [formGroup]="emailForm">
+            <div class="email-address">
+                <input type="email" id="email" name="email" formControlName="email" placeholder="Email address" />
+                <img src="images/footer/send.svg" alt="Send" width="18" height="18" (click)="sendEmail()" />
+            </div>
+        </form>
+
+        <div class="headphone">
+            <img src="images/footer/headphone.png" alt="Headphone">
+            <div class="call-us">
+                Call us 24/7 : <br>
+                +91 7284829675
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-panel2">
+        <div class="innerfooter">
+            <ul>
+                <div class="footer-logo">
+                    <img src="images/logo/footer-logo.png" alt="">
+                    <div class="address">A-3-5, Pooja Flat TRP Mall, Ahmedabad, Gujarat</div>
+                </div>
+                <div class="bottom-line"></div>
+                <div class="stayconnected">
+                    <img src="images/footer/google.png" alt="google">
+                    <img src="images/footer/facebook.png" alt="facebook">
+                    <img src="images/footer/twitter.png" alt="twitter">
+                    <img src="images/footer/youtube.png" alt="youtube">
+                </div>
+            </ul>
+
+            <ul>
+                <div class="panel2-name">Company</div>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Inquiry</a></li>
+                <li><a href="">User Feedback</a></li>
+                <li><a href="">Hair straighteners</a></li>
+            </ul>
+            <ul>
+                <div class="panel2-name">Category</div>
+                <li><a href="">Coffee</a></li>
+                <li><a href="">Desserts</a></li>
+                <li><a href="">Cake</a></li>
+                <li><a href="">Shake</a></li>
+                <li><a href="">Noodles</a></li>
+                <li><a href="">Pori</a></li>
+                <li><a href="">Pizza</a></li>
+            </ul>
+            <ul>
+                <div class="panel2-name"></div>
+                <li><a href="">Chinese</a></li>
+                <li><a href="">Chole Bhature</a></li>
+                <li><a href="">Paratha</a></li>
+                <li><a href="">Pure Veg</a></li>
+                <li><a href="">South Indian</a></li>
+                <li><a href="">Gulab Jambun</a></li>
+                <li><a href="">Lassi</a></li>
+            </ul>
+            <ul>
+                <div class="panel2-name">Policy Info</div>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Return Policy</a></li>
+                <li><a href="">Terms and Conditions</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

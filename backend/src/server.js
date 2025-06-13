@@ -13,14 +13,14 @@ app.use(cors());
 app.use(express.json());
 
 const frontendPath = path.join(__dirname, '../../frontend/dist/frontend/browser');
-app.use(express.static(frontendPath));
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
 
-app.get(/(.*)/, (req, res) => {
-  if (req.path.startsWith('/api')) return res.status(404).send('API route not found');
+app.use(express.static(frontendPath));
+
+app.get('*', (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
 

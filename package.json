@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "scripts": {
     "build": "cd frontend && npm install --force && ng build --configuration production",
-    "start": "npm run build && cd backend && npm install && node src/server.js"
+    "start": "cd backend && npm install && node src/server.js"
   }
 }

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { FOODS_BY_ID_URL, FOODS_BY_SEARCH_URL, FOODS_SUBCATEGORIES_BY_CATEGORY_ID_URL, FOODS_CATEGORIES_URL, FOODS_URL } from '../shared/constants/urls';
 import { Observable } from 'rxjs';
 import { Categories } from '../shared/models/Categories';
-import { SubCategories } from '../shared/models/SubCategories';
+ import { SubCategories } from '../shared/models/SubCategories';
 
 @Injectable({
   providedIn: 'root'

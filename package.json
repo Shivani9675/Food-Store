@@ -2,7 +2,7 @@
   "name": "foodmine",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm install -g @angular/cli && cd frontend && npm install --force && ng build --configuration production",
+    "build": "cd frontend && npm install --force && ng build --configuration production",
     "start": "npm run build && cd backend && npm install && node src/server.js"
   }
 }

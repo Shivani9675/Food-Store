@@ -3,6 +3,8 @@ import { FoodService } from '../../../services/food.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Categories } from '../../../shared/models/Categories';
+import { UserService } from '../../../services/user.service';
+import { User } from '../../../shared/models/user';
 
 @Component({
   selector: 'app-tags',
@@ -16,8 +18,12 @@ export class TagsComponent implements AfterViewInit, OnInit {
   canScrollLeft = false;
   canScrollRight = false;
   @ViewChild('slider', { static: false }) slider!: ElementRef;
+  user!: User;
 
-  constructor(private foodService: FoodService) {
+  constructor(private foodService: FoodService, private userService: UserService) {
+    this.userService.userObservable.subscribe((newUser) => {
+      this.user = newUser;
+    })
   }
 
   ngOnInit() {
@@ -51,5 +57,9 @@ export class TagsComponent implements AfterViewInit, OnInit {
     const el = this.slider.nativeElement;
     this.canScrollLeft = el.scrollLeft > 0;
     this.canScrollRight = el.scrollLeft + el.clientWidth < el.scrollWidth;
+  }
+
+  get isAuth() {
+    return this.user.token;
   }
 }

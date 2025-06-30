@@ -58,8 +58,8 @@ export class RegisterPageComponent {
       address: formValue.address
     };
 
-    this.userService.register(user).subscribe(_ => {
-      this.router.navigateByUrl(this.returnUrl);
-    })
+    // this.userService.register(user).subscribe(_ => {
+    //   this.router.navigateByUrl(this.returnUrl);
+    // })
   }
 }

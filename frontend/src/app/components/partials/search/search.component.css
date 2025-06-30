@@ -3,9 +3,9 @@
   width: 100%;
   left: 0;
   top: 74px;
-  z-index: 2;
+  /* z-index: 2; */
   background-color: #fff;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   padding-top: 48px;
 }
 
@@ -15,7 +15,7 @@
   height: 48px;
   overflow: hidden;
   border-bottom: 1px solid rgba(40, 44, 63, .2);
-  width: 860px;
+  width: 1060px;
   transform: translateZ(0);
   margin: 0 auto 8px;
   border: 1px solid rgba(40, 44, 63, .3);
@@ -67,7 +67,7 @@ ul {
   list-style-type: none;
   margin: 0px 112px;
   padding: 0;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 li a {
@@ -139,7 +139,7 @@ li a:hover {
   flex: 3;
   text-align: right;
   color: #363636;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .price {
@@ -173,13 +173,13 @@ li a:hover {
 
 .add-text {
   color: #cc0000;
-  font-weight: 600;
+  font-weight: 500;
   background-color: transparent;
 }
 
 .add-text:hover {
   color: white;
-  font-weight: 600;
+  font-weight: 500;
   background-color: #cc0000;
 }
 
@@ -234,7 +234,7 @@ li a:hover {
   min-width: 2.6rem;
   padding: 1px 2px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 6px;
   border: 1px solid #1c913c;
 }
@@ -286,7 +286,7 @@ h2 {
   color: white;
   background: linear-gradient(rgba(27, 30, 36, 0) 0%, rgb(27, 30, 36) 84.21%);
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -322,7 +322,7 @@ h2 {
 }
 
 .selected-food-name {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: -0.45px;
@@ -348,7 +348,7 @@ h2 {
 }
 
 .selected-food-price span {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   line-height: 21px;
   letter-spacing: -0.4px;
@@ -360,7 +360,7 @@ h2 {
 }
 
 .selected-food-description {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 15px;
   line-height: 21px;
   letter-spacing: -0.4px;

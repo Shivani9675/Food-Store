@@ -3,11 +3,14 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/models/user';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { HttpClient } from '@angular/common/http';
-import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
+import { USER_SIGN_IN, USER_SIGN_UP, USER_VERIFY_OTP } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
+import { IUserSignUp } from '../shared/interfaces/IUserSignUp';
+import { IUserSignIn } from '../shared/interfaces/IUserSignIn';
 
 const USER_KEY = 'User';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,36 +27,93 @@ export class UserService {
     return this.userSubject.value;
   }
 
-  login(userLogin: IUserLogin): Observable<User> {
-    return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
-      tap({
-        next: (user) => {
-          this.setUserToLocalStorage(user);
-          this.userSubject.next(user);
-          this.toastrService.success(
-            'Login Successful'
-          )
-        },
-        error: (errorResponse) => {
-          this.toastrService.error(errorResponse.error, 'Login Failed');
-        }
-      })
-    )
+  // login(userLogin: IUserLogin): Observable<User> {
+  //   return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
+  //     tap({
+  //       next: (user) => {
+  //         this.setUserToLocalStorage(user);
+  //         this.userSubject.next(user);
+  //         this.toastrService.success(
+  //           'Login Successful'
+  //         )
+  //       },
+  //       error: (errorResponse) => {
+  //         this.toastrService.error(errorResponse.error, 'Login Failed');
+  //       }
+  //     })
+  //   )
+  // }
+
+  // register(userRegister: IUserRegister): Observable<User> {
+  //   return this.http.post<User>(USER_REGISTER_URL, userRegister).pipe(
+  //     tap({
+  //       next: (user) => {
+  //         this.setUserToLocalStorage(user);
+  //         this.userSubject.next(user);
+  //         this.toastrService.success(
+  //           `Welcome to the Foodmine ${user.name}`,
+  //           'Register successful'
+  //         )
+  //       },
+  //       error: (errorResponse) => {
+  //         this.toastrService.error(errorResponse.error, 'Register Failed');
+  //       }
+  //     })
+  //   )
+  // }
+
+  // signUp(userSignup: IUserSignUp): Observable<User> {
+  //   return this.http.post<User>(USER_SIGN_UP, userSignup).pipe(
+  //     tap({
+  //       next: (user) => {
+  //         // this.setUserToLocalStorage(user);
+  //         // this.userSubject.next(user);
+  //         this.toastrService.success(
+  //           `Welcome to the Foodmine ${user.name}`,
+  //           // 'Register successful'
+  //         )
+  //       },
+  //       error: (errorResponse) => {
+  //         // this.toastrService.error(errorResponse.error, 'Register Failed');
+  //       }
+  //     })
+  //   )
+  // }
+
+  // signIn(userSignin: IUserSignIn): Observable<User> {
+  //   return this.http.post<User>(USER_SIGN_IN, userSignin).pipe(
+  //     tap({
+  //       next: (user) => {
+  //         // this.setUserToLocalStorage(user);
+  //         // this.userSubject.next(user);
+  //         // this.toastrService.success(
+  //         //   'Login Successful'
+  //         // )
+  //       },
+  //       error: (errorResponse) => {
+  //         this.toastrService.error(errorResponse.error, 'Login Failed');
+  //       }
+  //     })
+  //   )
+  // }
+
+  login(userSignin: IUserSignIn) {
+    return this.http.post<User>(USER_SIGN_IN, userSignin);
   }
 
-  register(userRegister: IUserRegister): Observable<User> {
-    return this.http.post<User>(USER_REGISTER_URL, userRegister).pipe(
+  register(userSignup: IUserSignUp) {
+    return this.http.post<User>(USER_SIGN_UP, userSignup);
+  }
+
+  verifyOtp(email: string, otp: string): Observable<User> {
+    return this.http.post<User>(USER_VERIFY_OTP, { email, otp }).pipe(
       tap({
         next: (user) => {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
-          this.toastrService.success(
-            `Welcome to the Foodmine ${user.name}`,
-            'Register successful'
-          )
         },
-        error: (errorResponse) => {
-          this.toastrService.error(errorResponse.error, 'Register Failed');
+        error: () => {
+          this.toastrService.error('OTP Verify Failed');
         }
       })
     )

@@ -85,3 +85,7 @@
 .slide img:hover {
   cursor: pointer;
 }
+
+h2{
+  font-weight: 500;
+}

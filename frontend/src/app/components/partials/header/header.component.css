@@ -1,15 +1,23 @@
 header {
   position: sticky;
   top: 0;
-  z-index: 10000;
   background: white;
   padding: 0;
   box-shadow: 0 15px 40px -20px rgba(40, 44, 63, .15);
+  pointer-events: auto;
+}
+
+.beforeloginheader {
+  z-index: 1000;
+}
+
+.afterloginheader {
+  z-index: 1001;
 }
 
 a {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(2, 6, 12, 0.9);
 }
 
@@ -34,6 +42,10 @@ a:hover {
 a.logo {
   font-weight: bold;
   padding: 1rem;
+}
+
+a.logo:focus-visible {
+  outline: unset;
 }
 
 ul {
@@ -97,7 +109,7 @@ ul a {
 }
 
 .menu a:hover {
-  color: rgba(18, 18, 19, 0.9);
+  color: #cc0000;
   display: block;
 }
 
@@ -113,7 +125,7 @@ ul a {
   color: #cc0000;
   font-size: 12px;
   top: 20px;
-  font-weight: 600;
+  font-weight: 500;
   position: absolute;
   right: -7px;
   text-transform: uppercase;

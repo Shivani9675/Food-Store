@@ -1,0 +1,119 @@
+.drawer-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 510px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 34px 42px;
+    z-index: 1002 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    overflow-y: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 26px;
+    left: 30px;
+    color: #000;
+    background: transparent;
+    border: none;
+    color: #4b4a4a;
+    cursor: pointer;
+}
+
+.close-button:focus-visible {
+    outline: unset;
+}
+
+.drawer-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    color: #000;
+}
+
+.sub-text {
+    position: relative;
+    font-size: 16px;
+    color: #000;
+    /* margin-bottom: 24px; */
+}
+
+.otp-sub-text {
+    width: 210px;
+    font-size: 16px;
+    color: #000;
+    margin-top: 10px;
+    margin-bottom: 24px;
+}
+
+.sub-text:after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    width: 35px;
+    border: 1px solid #000;
+}
+
+.highlight {
+    color: #ce0000;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.input-field {
+    width: 100%;
+}
+
+.login-button {
+    width: 100%;
+    background-color: #ce0000 !important;
+    text-transform: uppercase;
+    border: none;
+    color: #fff !important;
+    font-size: 18px;
+    padding: 22px 28px;
+    border-radius: 4px;
+    margin-top: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.terms-text {
+    font-size: 14px;
+    color: #777;
+    font-weight: 400;
+    margin-top: 16px;
+    line-height: 1.5;
+}
+
+.bold {
+    font-weight: 500;
+    color: rgba(2, 6, 12, 0.7);
+    cursor: pointer;
+}
+
+.login-image {
+    position: absolute;
+    top: 58px;
+    right: 42px;
+    width: 120px;
+    height: 125px;
+    opacity: 0.9;
+}

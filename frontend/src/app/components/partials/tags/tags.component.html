@@ -14,8 +14,8 @@
     </div>
     <div>
       <div class="slider-container">
-        <h2 class="m-l-112" *ngIf="!isAuth"><strong>What's on your mind?</strong></h2> 
-        <h2 class="m-l-112" *ngIf="isAuth"><strong>{{user.name}}, what's on your mind?</strong></h2> 
+        <h2 class="m-l-112" *ngIf="!isAuth">What's on your mind?</h2> 
+        <h2 class="m-l-112" *ngIf="isAuth">{{user.name}}, what's on your mind?</h2> 
         <div>
           <div class="slider" #slider (scroll)="onScroll()">
             <div class="slide" *ngFor="let item of categories" routerLink="/category/{{ item.id }}">

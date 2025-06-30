@@ -1,4 +1,4 @@
-<header>
+<header [ngClass]="{'afterloginheader' : isAuth, 'beforeloginheader': !isAuth }">
   <div class="container">
     <a routerLink="/" class="logo"><img src="images/logo/header-logo.png" alt="" height="35px"></a>
     <nav>
@@ -26,7 +26,7 @@
           </a>
         </li>
         <li *ngIf="!isAuth">
-          <a routerLink="/login" class="cart-link">
+          <a (click)="openLoginDialog($event)" class="cart-link">
             <img src="images/header/person-icon.svg" class="default-icon" alt="" width="32">
             <img src="images/header/person-red-icon.svg" class="hover-icon" alt="" width="32">
             Sign In

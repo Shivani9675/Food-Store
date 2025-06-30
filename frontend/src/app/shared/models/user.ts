@@ -2,7 +2,12 @@ export class User {
     id!: string;
     email!: string;
     name!: string;
+    phonenumber!:Number;
+    otp!:string;
+    otpExpires!:string;
+    isVerified!:boolean;
     address!: string;
     token!: string;
-    isAdmin!: boolean;
+    message!:string;
+    isNewUser!:boolean;
 }

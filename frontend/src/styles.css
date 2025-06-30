@@ -97,3 +97,47 @@ a {
     }
   }
 }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-mdc-form-field-infix {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.mdc-floating-label {
+  padding-left: 10px;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: #000;
+  font-weight: 500;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mat-mdc-notch-piece {
+  border-color: #ce0000 !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label {
+  color: #ce0000 !important;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: #02060c;
+}
+
+.cdk-overlay-backdrop-showing {
+  opacity: 0.7 !important;
+}
+
+.mdc-text-field__input {
+  font-size: 20px !important;
+}

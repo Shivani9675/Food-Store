@@ -1,256 +1,153 @@
-<app-tags *ngIf="foods.length"></app-tags>
-<app-not-found [visible]="!foods || !foods.length" resetLinkText="Reset Search">
-</app-not-found>
-
-<hr class="line" *ngIf="foods.length">
-
-<!-- Popular Food -->
-<div>
-  <h2 class="m-l-112" *ngIf="popularFood.length"><strong> Popular Food </strong></h2>
-  <ul>
-    <li *ngFor="let food of popularFood">
-      <a>
-        <img class="img-class" [src]="food.imageUrl" [alt]="food.name" (click)="openFoodDetailDialog(food)" />
-        <div class="content">
-          <div class="name">
-            {{ food.name }}
-          </div>
-          <div class="star-wrapper">
-            <span class="favorite">
-              <span class="rating">{{food.rating}}
-                <img src="images/stars/star-white-color.svg" alt="" width="13" height="13">
-              </span>
-            </span>
-          </div>
-          <div class="product-item-footer">
-            <div class="origins">
-              {{ food?.origins?.join(', ') }}
+<div class="main-container">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <a href="/" class="food-logo">
+                <img src="images/home/logo.png" alt="Logo" width="200" />
+            </a>
+            <div class="home-menu">
+                <a href="" class="list">About us</a>
+                <a href="" class="get-app-btn">
+                    Get the App
+                    <img src="images/home/arrow-up-right.svg" alt="" width="24" height="24">
+                </a>
+                <a *ngIf="!isAuth" (click)="openLoginDialog()" class="get-app-btn"
+                    style="width: 160px; background-color: black; border: none; font-weight: 600;">
+                    Sign in
+                </a>
+                <div class="person-logo-wrapper" *ngIf="isAuth">
+                    <div class="menu-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 40 40" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M15.7607 11.8897C17.6325 11.8897 19.1488 10.4133 19.1488 8.59205C19.1488 6.77184 17.6325 5.29541 15.7607 5.29541C13.89 5.29541 12.3726 6.77184 12.3726 8.59205C12.3726 10.4133 13.89 11.8897 15.7607 11.8897ZM8.4418 18.8226C9.55113 15.9384 12.4101 13.8843 15.7607 13.8843C19.1131 13.8843 21.9711 15.9384 23.0799 18.8226C23.4596 19.8103 23.6494 20.3041 23.2438 20.8947C22.8381 21.4853 22.1753 21.4853 20.8498 21.4853H10.6717C9.34616 21.4853 8.68342 21.4853 8.27773 20.8947C7.87205 20.304 8.06197 19.8102 8.4418 18.8226Z"
+                                fill="#43464A"></path>
+                            <path
+                                d="M40 20C40 31.0457 31.0457 40 20 40C8.9543 40 0 31.0457 0 20C0 8.9543 8.9543 0 20 0C31.0457 0 40 8.9543 40 20Z"
+                                fill="#43464A"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20.449 17.773C23.0101 17.773 25.0849 15.7528 25.0849 13.2608C25.0849 10.7702 23.0101 8.75 20.449 8.75C17.8893 8.75 15.813 10.7702 15.813 13.2608C15.813 15.7528 17.8893 17.773 20.449 17.773ZM10.4354 27.2601C11.9533 23.3136 15.8653 20.5029 20.4498 20.5029C25.037 20.5029 28.9475 23.3136 30.4646 27.26C30.9842 28.6115 31.244 29.2872 30.6889 30.0953C30.1338 30.9034 29.2269 30.9034 27.4132 30.9034H13.4865C11.6729 30.9034 10.766 30.9034 10.2109 30.0952C9.65584 29.2869 9.9157 28.6113 10.4354 27.2601Z"
+                                fill="white"></path>
+                        </svg>
+                        <div class="menu">
+                            <a href="">Profile</a>
+                            <a href="">Orders</a>
+                            <a (click)="logout()">Logout</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="cook-time">
-              {{ food.deliveryTime }} min
-            </div>
-          </div>
-          <!-- <div class="add-cart-wrapper">
-          <div class="price">
-            <span>{{ food.price | currency: 'INR' }}</span>
-          </div>
-          <div *ngIf="!isInCart(food.id)" class="add-cart-btn" (click)="changeQuantity(food)">
-            <div class="add-cart add-text">
-              Add
-            </div>
-          </div>
-          <div *ngIf="isInCart(food.id)" class="add-cart-btn">
-            <div class="add-cart add-btn-container">
-              <div class="add-btn" (click)="decreaseQuantity(food.id)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  class="CtaOnDeck___StyledMinusIcon-sc-orwifk-9 dPdCkk">
-                  <path
-                    d="M19 13H5C4.448 13 4 12.553 4 12C4 11.447 4.448 11 5 11H19C19.553 11 20 11.447 20 12C20 12.553 19.553 13 19 13Z">
-                  </path>
-                </svg>
-              </div>
-              <div class="cart-quantity">{{ getQuantity(food.id) }}</div>
-              <div class="add-btn" (click)="increaseQuantity(food.id)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  class="CtaOnDeck___StyledPlusIcon-sc-orwifk-12 kyqQMg">
-                  <path
-                    d="M19 11H13V5C13 4.447 12.552 4 12 4C11.448 4 11 4.447 11 5V11H5C4.448 11 4 11.447 4 12C4 12.553 4.448 13 5 13H11V19C11 19.553 11.448 20 12 20C12.552 20 13 19.553 13 19V13H19C19.552 13 20 12.553 20 12C20 11.447 19.552 11 19 11Z">
-                  </path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div> -->
         </div>
-      </a>
-    </li>
-  </ul>
-</div>
-
-<!-- Today's Offers -->
-<div>
-  <h2 class="m-l-112" #offerSection *ngIf="offerInFood.length"><strong> Today's Offers </strong></h2>
-  <ul>
-    <li *ngFor="let food of offerInFood">
-      <a>
-        <div class="food-img" (click)="openFoodDetailDialog(food)">
-          <img class="img-class" [src]="food.imageUrl" [alt]="food.name" />
-          <div class="food-offer-section">
-            <div class="food-offer">{{food.discount}}</div>
-          </div>
-        </div>
-        <div class="content">
-          <div class="name">
-            {{ food.name }}
-          </div>
-          <div class="star-wrapper">
-            <span class="favorite">
-              <span class="rating">{{food.rating}}
-                <img src="images/stars/star-white-color.svg" alt="" width="13" height="13">
-              </span>
-            </span>
-          </div>
-          <div class="product-item-footer">
-            <div class="origins">
-              {{ food?.origins?.join(', ') }}
-            </div>
-            <div class="cook-time">
-              {{ food.deliveryTime }} min
-            </div>
-          </div>
-          <!-- <div class="add-cart-wrapper">
-          <div class="price">
-            <span>{{ food.price | currency: 'INR' }}</span>
-          </div>
-          <div *ngIf="!isInCart(food.id)" class="add-cart-btn" (click)="changeQuantity(food)">
-            <div class="add-cart add-text">
-              Add
-            </div>
-          </div>
-          <div *ngIf="isInCart(food.id)" class="add-cart-btn">
-            <div class="add-cart add-btn-container">
-              <div class="add-btn" (click)="decreaseQuantity(food.id)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  class="CtaOnDeck___StyledMinusIcon-sc-orwifk-9 dPdCkk">
-                  <path
-                    d="M19 13H5C4.448 13 4 12.553 4 12C4 11.447 4.448 11 5 11H19C19.553 11 20 11.447 20 12C20 12.553 19.553 13 19 13Z">
-                  </path>
-                </svg>
-              </div>
-              <div class="cart-quantity">{{ getQuantity(food.id) }}</div>
-              <div class="add-btn" (click)="increaseQuantity(food.id)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  class="CtaOnDeck___StyledPlusIcon-sc-orwifk-12 kyqQMg">
-                  <path
-                    d="M19 11H13V5C13 4.447 12.552 4 12 4C11.448 4 11 4.447 11 5V11H5C4.448 11 4 11.447 4 12C4 12.553 4.448 13 5 13H11V19C11 19.553 11.448 20 12 20C12.552 20 13 19.553 13 19V13H19C19.552 13 20 12.553 20 12C20 11.447 19.552 11 19 11Z">
-                  </path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        </div>
-      </a>
-    </li>
-  </ul>
-</div>
-
-<!-- Recommended For You -->
-<div>
-  <h2 class="m-l-112" *ngIf="recommendedFood.length > 0"><strong> Recommended For You </strong></h2>
-  <ul>
-    <li *ngFor="let food of recommendedFood">
-      <a>
-        <div class="food-img" (click)="openFoodDetailDialog(food)">
-          <img class="img-class" [src]="food.imageUrl" [alt]="food.name" />
-          <div class="food-offer-section">
-            <div class="food-offer">{{food.discount}}</div>
-          </div>
-        </div>
-        <div class="content">
-          <div class="name">
-            {{ food.name }}
-          </div>
-          <div class="star-wrapper">
-            <span class="favorite">
-              <span class="rating">{{food.rating}}
-                <img src="images/stars/star-white-color.svg" alt="" width="13" height="13">
-              </span>
-            </span>
-          </div>
-          <div class="product-item-footer">
-            <div class="origins">
-              {{ food?.origins?.join(', ') }}
-            </div>
-            <div class="cook-time">
-              {{ food.deliveryTime }} min
-            </div>
-          </div>
-          <!-- <div class="add-cart-wrapper">
-          <div class="price">
-            <span>{{ food.price | currency: 'INR' }}</span>
-          </div>
-          <div *ngIf="!isInCart(food.id)" class="add-cart-btn" (click)="changeQuantity(food)">
-            <div class="add-cart add-text">
-              Add
-            </div>
-          </div>
-          <div *ngIf="isInCart(food.id)" class="add-cart-btn">
-            <div class="add-cart add-btn-container">
-              <div class="add-btn" (click)="decreaseQuantity(food.id)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  class="CtaOnDeck___StyledMinusIcon-sc-orwifk-9 dPdCkk">
-                  <path
-                    d="M19 13H5C4.448 13 4 12.553 4 12C4 11.447 4.448 11 5 11H19C19.553 11 20 11.447 20 12C20 12.553 19.553 13 19 13Z">
-                  </path>
-                </svg>
-              </div>
-              <div class="cart-quantity">{{ getQuantity(food.id) }}</div>
-              <div class="add-btn" (click)="increaseQuantity(food.id)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  class="CtaOnDeck___StyledPlusIcon-sc-orwifk-12 kyqQMg">
-                  <path
-                    d="M19 11H13V5C13 4.447 12.552 4 12 4C11.448 4 11 4.447 11 5V11H5C4.448 11 4 11.447 4 12C4 12.553 4.448 13 5 13H11V19C11 19.553 11.448 20 12 20C12.552 20 13 19.553 13 19V13H19C19.552 13 20 12.553 20 12C20 11.447 19.552 11 19 11Z">
-                  </path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        </div>
-      </a>
-    </li>
-  </ul>
-</div>
-
-<!-- Food Detail Dialog -->
-<div class="dialog-backdrop" *ngIf="selectedFood">
-  <div class="dialog" (click)="$event.stopPropagation()">
-    <img [src]="selectedFood.imageUrl" alt="{{ selectedFood.name }}" />
-    <div class="d-flex">
-      <div class="flex-column">
-        <div class="selected-food-name">{{ selectedFood.name }}</div>
-        <div class="selected-food-price"> <span>{{ selectedFood.price | currency: 'INR'}}</span></div>
-        <div class="selected-food-cook-time">
-          Time to cook about <strong>{{ selectedFood.deliveryTime }}</strong> minutes
-        </div>
-      </div>
-      <div>
-        <div class="selected-food-add-to-cart-wrapper">
-          <div *ngIf="!isInCart(selectedFood.id)" class="add-cart-btn" (click)="changeQuantity(selectedFood)">
-            <div class="add-cart add-text">
-              Add
-            </div>
-          </div>
-          <div *ngIf="isInCart(selectedFood.id)" class="add-cart-btn">
-            <div class="add-cart add-btn-container">
-              <div class="add-btn" (click)="decreaseQuantity(selectedFood.id)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  class="CtaOnDeck___StyledMinusIcon-sc-orwifk-9 dPdCkk">
-                  <path
-                    d="M19 13H5C4.448 13 4 12.553 4 12C4 11.447 4.448 11 5 11H19C19.553 11 20 11.447 20 12C20 12.553 19.553 13 19 13Z">
-                  </path>
-                </svg>
-              </div>
-              <div class="cart-quantity">{{ getQuantity(selectedFood.id) }}</div>
-              <div class="add-btn" (click)="increaseQuantity(selectedFood.id)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  class="CtaOnDeck___StyledPlusIcon-sc-orwifk-12 kyqQMg">
-                  <path
-                    d="M19 11H13V5C13 4.447 12.552 4 12 4C11.448 4 11 4.447 11 5V11H5C4.448 11 4 11.447 4 12C4 12.553 4.448 13 5 13H11V19C11 19.553 11.448 20 12 20C12.552 20 13 19.553 13 19V13H19C19.552 13 20 12.553 20 12C20 11.447 19.552 11 19 11Z">
-                  </path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="selected-food-description">
-      {{selectedFood.description}}
+    <div class="heading-banner">
+        <img src="images/home/left-veg.png" class="veg-image left" alt="Left Vegetable" />
+
+        <div class="tag-line-wrapper">
+            <div class="tag-line">
+                <h2>Hungry? Order delicious food. Explore top foods. Food Mine it!</h2>
+                <!-- <h2>Order food & items. Discover best foods. Food Mine it!</h2> -->
+                <div class="location-search-wrapper">
+                    <div class="location-wrapper">
+                        <div class="location-section">
+                            <img src="images/home/location.svg" alt="" width="25">
+                            <div class="input-wrapper input-section">
+                                <input type="text" name="location" id="location"
+                                    value="Vejalpur, Ahmedabad, Gujarat, India" maxlength="30">
+                            </div>
+                            <div (click)="toggleLocation()" style="cursor: pointer;">
+                                <img src="images/home/down-arrow.svg" alt="" width="30">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-wrapper">
+                        <div class="search-section" (click)="goToSearch()">
+                            <div type="button" class="p-l-16">
+                                <div class="search-title">Search for foods, item or more</div>
+                            </div>
+                            <div class="search-icon">
+                                <img src="images/header/search-grey-icon.svg" alt="" width="35">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="use-my-location-wrapper" *ngIf="isLocationMenuOpen">
+                    <div type="button" class="use-my-location-section">
+                        <img src="images/home/location-icon.svg" alt="" width="20">
+                        <h2 class="location-title">Use my current location</h2>
+                    </div>
+                    <div class="recent-search-section">
+                        <div class="recent-search-title">
+                            Recent searches
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-banner">
+                <div class="main-cart-wrapper">
+                    <div class="cart-wrapper" (click)="goToFoodPage()">
+                        <div class="cart-img">
+                            <div class="cart">
+                                <div class="cart-title">
+                                    <h2>Food Delivery</h2>
+                                    <h4>From cloud kitchen </h4>
+                                    <div class="offer-section">
+                                        Upto 60% Off
+                                    </div>
+                                    <div class="center">
+                                        <div class="cart-image">
+                                            <img src="images/home/image.png" alt="">
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <img src="images/home/arrow-btn.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-wrapper" (click)="goToFoodPage()">
+                        <div class="cart-img">
+                            <div class="cart">
+                                <div class="cart-title">
+                                    <h2>Food Delivery</h2>
+                                    <h4>From cloud kitchen </h4>
+                                    <div class="offer-section">
+                                        Upto 60% Off
+                                    </div>
+                                    <div class="center">
+                                        <div class="cart-image">
+                                            <img src="images/home/image.png" alt="">
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <img src="images/home/arrow-btn.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-wrapper" (click)="goToFoodPage()">
+                        <div class="cart-img">
+                            <div class="cart">
+                                <div class="cart-title">
+                                    <h2>Food Delivery</h2>
+                                    <h4>From cloud kitchen </h4>
+                                    <div class="offer-section">
+                                        Upto 60% Off
+                                    </div>
+                                    <div class="center">
+                                        <div class="cart-image">
+                                            <img src="images/home/image.png" alt="">
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <img src="images/home/arrow-btn.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="images/home/right-veg.png" class="veg-image right" alt="Right Vegetable" />
     </div>
-    <button class="close-food-dialog" (click)="closeFoodDetailDialog()">
-      <img src="images/close/close.svg" alt="">
-    </button>
-  </div>
 </div>

@@ -1,0 +1,47 @@
+<div class="drawer-container">
+  <button mat-btn class="close-button" mat-icon-button>
+    <mat-icon (click)="close()">close</mat-icon>
+  </button>
+
+  <div class="drawer-content">
+
+    <h2>Sign Up</h2>
+    <p class="sub-text">or <span class="highlight" (click)="openSignInDialog()">login to your account</span></p>
+
+    <div class="mt-50">
+      <mat-form-field appearance="outline" class="input-field">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="email" />
+      </mat-form-field>
+
+      <div *ngIf="!otpSent">
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" [(ngModel)]="name" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>Phone number</mat-label>
+          <input matInput type="phonenumber" [(ngModel)]="phonenumber" />
+        </mat-form-field>
+      </div>
+
+      <div *ngIf="otpSent">
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>One time password</mat-label>
+          <input matInput type="otp" [(ngModel)]="otp" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <button *ngIf="!otpSent" class="login-button" (click)="signUp()"><span>Continue</span></button>
+    <button *ngIf="otpSent" class="login-button" (click)="verifyOtp()"><span>Verify otp</span></button>
+
+    <p class="terms-text" *ngIf="!otpSent">
+      By creating an account, I accept the
+      <span class="bold">Terms & Conditions</span> & <span class="bold">Privacy Policy</span>
+    </p>
+  </div>
+
+  <img src="images/signin/signin.png" class="login-image" alt="login" />
+</div>

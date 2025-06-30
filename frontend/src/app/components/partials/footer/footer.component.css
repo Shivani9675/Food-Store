@@ -32,7 +32,7 @@ input.ng-invalid.ng-touched.is-invalid {
     color: rgba(2, 6, 12, 0.75);
     font-size: 29.38px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .footer-panel1 .email-address {
@@ -56,12 +56,13 @@ input.ng-invalid.ng-touched.is-invalid {
     border-radius: 20px;
     background: #f0f0f5;
     border: 0;
-    font-size: 15px;
-
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .footer-panel1 .email-address input::placeholder {
     color: rgba(2, 6, 12, 0.6);
+    font-weight: 600;
 }
 
 .headphone {
@@ -84,7 +85,7 @@ input.ng-invalid.ng-touched.is-invalid {
     color: #606060;
     font-size: 14px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* footer-panel2 */
@@ -92,7 +93,7 @@ input.ng-invalid.ng-touched.is-invalid {
     color: rgba(2, 6, 12, 0.92);
     font-size: 19px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     height: 247px;
     display: flex;
     justify-content: space-evenly;
@@ -115,7 +116,7 @@ input.ng-invalid.ng-touched.is-invalid {
     color: rgba(2, 6, 12, 0.92);
     font-size: 20px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* .innerfooter li::before {
@@ -130,7 +131,7 @@ ul a {
     text-decoration: none;
     font-size: 14px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .footer-logo {
@@ -148,7 +149,7 @@ ul a {
     color: rgba(2, 6, 12, 0.6);
     font-size: 14px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     width: 183px;
     height: 50px;
     padding-top: 20px;

@@ -95,6 +95,10 @@ h2 {
     cursor: pointer;
 }
 
+.login-button mat-spinner{
+    margin: auto;
+}
+
 .terms-text {
     font-size: 14px;
     color: #777;

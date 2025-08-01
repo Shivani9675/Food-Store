@@ -1,21 +1,29 @@
 <div class="container">
     <div class="content" *ngIf="order">
-        <h1>Order #{{order.id}}</h1>
+        <h1>Order Id: {{order.id}}</h1>
         <div class="details">
-            <div><strong>Date</strong> {{order.createdAt | date:'medium'}}</div>
-            <div><strong>Name</strong> {{order.name}}</div>
-            <div><strong>Address</strong> {{order.address}}</div>
-            <div><strong>Status</strong> {{order.status}}</div>
+            <div>
+                <h3>Date</h3> {{order.createdAt | date:'medium'}}
+            </div>
+            <div>
+                <h3>Name</h3> {{order.name}}
+            </div>
+            <div>
+                <h3>Address</h3>{{order.address}}
+            </div>
+            <div>
+                <h3>Status</h3> {{order.status}}
+            </div>
             <div *ngIf="order.paymentId">
-                <strong>Payment ID</strong> {{order.paymentId}}
+                <h3>Payment ID</h3> {{order.paymentId}}
             </div>
         </div>
 
         <order-items-list [order]="order"></order-items-list>
     </div>
 
-    <div>
-        <app-title title="Shipping Address"></app-title>
+    <div class="shipping-address-warpper">
+        <app-title title="Shipping Address" fontSize="26px" margin="10px 10px 30px 0"></app-title>
         <map [order]="order" [readonly]="true"></map>
     </div>
 </div>

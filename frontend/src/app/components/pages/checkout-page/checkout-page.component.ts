@@ -8,9 +8,9 @@ import { OrderItemsComponent } from '../../partials/order-items/order-items.comp
 import { CommonModule } from '@angular/common';
 import { TitleComponent } from '../../partials/title/title.component';
 import { TextInputComponent } from '../../partials/text-input/text-input.component';
-import { MapComponent } from '../../partials/map/map.component';
 import { OrderService } from '../../../services/order.service';
 import { Router } from '@angular/router';
+import { MapComponent } from '../../partials/map/map.component';
 
 @Component({
   selector: 'app-checkout-page',

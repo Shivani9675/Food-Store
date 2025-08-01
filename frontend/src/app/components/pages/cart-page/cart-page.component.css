@@ -1,3 +1,7 @@
+.cart-page-wrapper {
+  margin-top: 99px;
+}
+
 .my-5 {
   margin: 3rem;
   margin-top: 1.25rem;
@@ -51,6 +55,7 @@
 }
 
 .checkout-btn-section {
+  cursor: pointer;
   justify-content: flex-end;
 }
 

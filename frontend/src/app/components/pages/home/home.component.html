@@ -2,16 +2,20 @@
     <div class="header-container">
         <div class="header-wrapper">
             <a href="/" class="food-logo">
-                <img src="images/home/logo.png" alt="Logo" width="200" />
+                <img src="images/logo/header-logo.png" alt="Logo" width="200" />
             </a>
             <div class="home-menu">
-                <a href="" class="list">About us</a>
-                <a href="" class="get-app-btn">
+                <!-- <a href="" class="list">About us</a> -->
+                <a class="get-app-btn" (click)="goToMap()">
                     Get the App
-                    <img src="images/home/arrow-up-right.svg" alt="" width="24" height="24">
+                    <mat-icon color="warn">
+                        <span class="material-symbols-outlined">
+                            arrow_outward
+                        </span>
+                    </mat-icon>
+                    <!-- <img src="images/home/arrow-up-right.svg" alt="" width="24" height="24"> -->
                 </a>
-                <a *ngIf="!isAuth" (click)="openLoginDialog()" class="get-app-btn"
-                    style="width: 160px; background-color: black; border: none; font-weight: 600;">
+                <a *ngIf="!isAuth" (click)="openLoginDialog()" class="get-app-btn signin-btn">
                     Sign in
                 </a>
                 <div class="person-logo-wrapper" *ngIf="isAuth">
@@ -28,8 +32,8 @@
                                 fill="white"></path>
                         </svg>
                         <div class="menu">
-                            <a href="">Profile</a>
-                            <a href="">Orders</a>
+                            <a routerLink="/my-account">Profile</a>
+                            <a routerLink="my-account/orders">Orders</a>
                             <a (click)="logout()">Logout</a>
                         </div>
                     </div>
@@ -37,23 +41,30 @@
             </div>
         </div>
     </div>
+
     <div class="heading-banner">
         <img src="images/home/left-veg.png" class="veg-image left" alt="Left Vegetable" />
 
         <div class="tag-line-wrapper">
+            <h2 class="main-title">Eat smart, feel great. Discover healthy and tasty foods. Only on FoodMine!</h2>
+
             <div class="tag-line">
-                <h2>Hungry? Order delicious food. Explore top foods. Food Mine it!</h2>
-                <!-- <h2>Order food & items. Discover best foods. Food Mine it!</h2> -->
                 <div class="location-search-wrapper">
                     <div class="location-wrapper">
                         <div class="location-section">
                             <img src="images/home/location.svg" alt="" width="25">
                             <div class="input-wrapper input-section">
                                 <input type="text" name="location" id="location"
-                                    value="Vejalpur, Ahmedabad, Gujarat, India" maxlength="30">
+                                    placeholder="Enter your delivery location"
+                                    [value]="isFetchingLocation ? 'Fetching your location...' : currentLocation"
+                                    readonly>
                             </div>
                             <div (click)="toggleLocation()" style="cursor: pointer;">
-                                <img src="images/home/down-arrow.svg" alt="" width="30">
+                                <img *ngIf="!isLocationMenuOpen" src="images/home/down-arrow.svg" alt="" width="30">
+                                <img *ngIf="isLocationMenuOpen" src="images/home/up-arrow.svg" alt="" width="30">
+                            </div>
+                            <div *ngIf="isLocationErr" class="location-error">
+                                {{locationErrorArr}}
                             </div>
                         </div>
                     </div>
@@ -69,13 +80,21 @@
                     </div>
                 </div>
                 <div class="use-my-location-wrapper" *ngIf="isLocationMenuOpen">
-                    <div type="button" class="use-my-location-section">
+                    <div class="use-my-location-section" (click)="useCurrentLocation()">
                         <img src="images/home/location-icon.svg" alt="" width="20">
                         <h2 class="location-title">Use my current location</h2>
                     </div>
-                    <div class="recent-search-section">
+                    <div class="recent-search-section" *ngIf="recentSearchArr.length">
                         <div class="recent-search-title">
                             Recent searches
+                        </div>
+                        <div class="recent-search-loop">
+                            <div class="location-icon-section">
+                                <img src="images/home/recent-search-location.svg" alt="" width="20">
+                            </div>
+                            <div class="recent-search-list-section">
+                                <span class="recent-search-list">{{recentSearchArr}}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -151,3 +170,6 @@
         <img src="images/home/right-veg.png" class="veg-image right" alt="Right Vegetable" />
     </div>
 </div>
+
+<app-tags></app-tags>
+<app-footer></app-footer>

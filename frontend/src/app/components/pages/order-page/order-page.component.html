@@ -1,0 +1,46 @@
+<div>
+    <div>
+        <h2>Your Orders</h2>
+        <div class="orders-wrapper" *ngFor="let order of visibleOrders">
+            <div class="orders-section">
+                <div class="order-img-section">
+                    <img [src]="order.items[0].food.imageUrl" alt="" width="150px" height="100px">
+                </div>
+                <div class="order-description-section">
+                    <div class="order-name">{{ order.items[0].food.name }}</div>
+                    <div class="order-location">{{order.address}}</div>
+                    <div class="order-info">
+                        ORDER #{{order.paymentId}} | {{order.createdAt | date:'medium'}}
+                    </div>
+                    <div class="view-details" (click)="goToViewDetailsPage(order.id)">View Details</div>
+                    <div class="order-delivery-section">
+                        <span>
+                            Delivered on {{order.updatedAt | date:'medium'}}
+                            <img src="images/my-account/check-circle.svg" width="25" height="25">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reorder-section">
+                <div *ngFor="let item of (order.isExpanded ? order.items : order.items.slice(0, 2))"
+                    class="order-quentity">
+                    {{ item.food.name }} x {{ item.quantity }}
+                </div>
+                <div *ngIf="order.items.length > 2">
+                    <button class="more-btn" (click)="toggleItems(order)">
+                        {{ order.isExpanded ? 'Less' : 'More' }}
+                    </button>
+                </div>
+                <div class="d-f">
+                    <button class="btn reorder-btn">Reorder</button>
+                    <button class="btn">Help</button>
+                </div>
+                <div class="price">Total Paid: ₹ {{ order.totalPrice }} </div>
+            </div>
+        </div>
+
+        <div *ngIf="hasMoreOrders()" class="load-more-seaction" (click)="loadMoreOrders()">
+            Show More Orders </div>
+    </div>
+</div>

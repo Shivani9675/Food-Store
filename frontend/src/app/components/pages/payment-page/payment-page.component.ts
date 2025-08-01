@@ -4,12 +4,12 @@ import { OrderItemsComponent } from '../../partials/order-items/order-items.comp
 import { Order } from '../../../shared/models/Order';
 import { OrderService } from '../../../services/order.service';
 import { Router } from '@angular/router';
-import { MapComponent } from '../../partials/map/map.component';
 import { PaypalButtonComponent } from '../../partials/paypal-button/paypal-button.component';
+import { MapComponent } from '../../partials/map/map.component';
 
 @Component({
   selector: 'app-payment-page',
-  imports: [TitleComponent, OrderItemsComponent, MapComponent, PaypalButtonComponent],
+  imports: [TitleComponent, OrderItemsComponent, PaypalButtonComponent, MapComponent],
   templateUrl: './payment-page.component.html',
   styleUrl: './payment-page.component.css'
 })

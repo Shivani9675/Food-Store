@@ -1,0 +1,11 @@
+<input #searchBox type="text" placeholder="Search location..." style="width: 100%; padding: 8px;" />
+
+<google-map height="100%" width="100%" [center]="center" [zoom]="zoom" (mapClick)="onMapClick($event)">
+    <map-marker *ngIf="markerPosition" [position]="markerPosition"></map-marker>
+</google-map>
+
+<div style="margin-top: 1rem;">
+    <p><strong>Latitude:</strong> {{ selectedLat }}</p>
+    <p><strong>Longitude:</strong> {{ selectedLng }}</p>
+    <p><strong>Address:</strong> {{ selectedAddress }}</p>
+</div>

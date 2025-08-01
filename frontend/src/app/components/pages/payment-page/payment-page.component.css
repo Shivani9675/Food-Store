@@ -1,9 +1,10 @@
 .container {
     margin-top: 1rem;
     display: flex;
-    margin: 0 2rem 2rem 2rem;
+    margin: 74px 2rem 2rem 2rem;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 20px;
 }
 
 .content {
@@ -25,8 +26,8 @@
 .summary h3 {
     margin: 0 1rem 0 0;
     flex-basis: 5rem;
+    font-weight: 500;
 }
-
 
 .buttons-container {
     flex-basis: 100%;

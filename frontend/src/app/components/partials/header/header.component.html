@@ -19,7 +19,7 @@
           </a>
         </li>
         <li>
-          <a routerLink="/" class="cart-link">
+          <a routerLink="/foods" class="cart-link">
             <img src="images/header/help-icon.svg" class="default-icon" alt="" height="22">
             <img src="images/header/help-red-icon.svg" class="hover-icon" alt="" height="22">
             Help
@@ -39,8 +39,10 @@
             {{ user.name }}
           </a>
           <div class="menu">
-            <a routerLink="/profile">Profile</a>
-            <a routerLink="/orders">Orders</a>
+            <a routerLink="/my-account">Profile</a>
+            <a routerLink="my-account/orders">Orders</a>
+            <a routerLink="/my-account/food-mine-one">Foodmine One</a>
+            <a routerLink="my-account/favourites">Favourites</a>
             <a (click)="logout()">Logout</a>
           </div>
         </li>

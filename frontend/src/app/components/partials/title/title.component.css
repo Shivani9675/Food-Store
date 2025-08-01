@@ -1,4 +1,5 @@
 div {
-  color: rgba(32, 32, 32, 1);
+  /* color: rgba(32, 32, 32, 1); */
+  color: black;
   font-weight: 500;
 }

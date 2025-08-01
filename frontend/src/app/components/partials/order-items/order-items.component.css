@@ -9,7 +9,8 @@ table {
 h3 {
     margin-top: 0.5rem;
     margin-left: 0.3rem;
-    color: grey;
+    color: black;
+    font-weight: 500;
 }
 
 a:hover {

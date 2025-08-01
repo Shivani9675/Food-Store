@@ -1,0 +1,168 @@
+.right-section h2 {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.orders-wrapper {
+    border: 1px solid rgba(2, 6, 12, .2);
+    padding: 10px 30px 30px;
+    margin: 24px 0 37px;
+}
+
+.orders-section {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-image: linear-gradient(to right, rgba(2, 6, 12, .4) 25%, rgba(255, 255, 255, 0) 0);
+    background-position: bottom;
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
+    display: flex;
+}
+
+.order-img-section {
+    background: rgba(40, 44, 63, .05);
+    width: 150px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.order-description-section {
+    flex: 1;
+    position: relative;
+    padding-left: 18px;
+}
+
+.order-name {
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(2, 6, 12, .9);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.order-location {
+    font-size: 13px;
+    color: rgba(2, 6, 12, .7);
+    text-transform: capitalize;
+    margin-top: 3px;
+}
+
+.order-info {
+    margin-top: 6px;
+    color: rgba(2, 6, 12, .6);
+    font-size: 12px;
+}
+
+.view-details {
+    margin-top: 14px;
+    color: #ce0000;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: -.3px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.order-delivery-section {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 18px;
+    font-size: 14px;
+    color: rgba(2, 6, 12, .7);
+}
+
+.order-delivery-section span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-delivery-section img {
+    margin-left: 6px;
+}
+
+.green-icon {
+    background: #1ba672;
+    color: #fff;
+    padding: 5px;
+    /* font-size: 10px; */
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.reorder-section {
+    padding-top: 20px;
+    position: relative;
+}
+
+.order-quentity {
+    font-size: 15px;
+    padding-right: 240px;
+    color: #02060c;
+    line-height: 20px;
+}
+
+.reorder-section .btn {
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 20px;
+    line-height: 40px;
+    height: 40px;
+    color: #ce0000;
+    background-color: white;
+    border: 1px solid #ce0000;
+    padding: 0 15px;
+    margin-top: 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.reorder-section .btn:hover {
+    position: relative;
+    box-shadow: 0 2px 8px rgba(2, 6, 12, .2);
+}
+
+.reorder-section .reorder-btn {
+    background: #ce0000;
+    color: #fff;
+}
+
+.reorder-section .price {
+    float: right;
+    position: absolute;
+    top: 22px;
+    right: 0;
+    color: rgba(2, 6, 12, .8);
+    font-size: 14px;
+}
+
+.load-more-seaction {
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    border: solid 1px rgba(2, 6, 12, .2);
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(2, 6, 12, .9);
+    cursor: pointer;
+}
+
+.load-more-seaction:hover {
+    box-shadow: 0 4px 14px rgba(2, 6, 12, .2);
+}
+
+.more-btn {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: blue;
+    padding: 0;
+    cursor: pointer;
+}

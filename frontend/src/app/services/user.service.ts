@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
 import { IUserSignUp } from '../shared/interfaces/IUserSignUp';
 import { IUserSignIn } from '../shared/interfaces/IUserSignIn';
+import { bypassLoadingInterceptor } from '../shared/interceptors/bypass-loading.interceptor';
 
 const USER_KEY = 'User';
 
@@ -98,15 +99,15 @@ export class UserService {
   // }
 
   login(userSignin: IUserSignIn) {
-    return this.http.post<User>(USER_SIGN_IN, userSignin);
+    return this.http.post<User>(USER_SIGN_IN, userSignin, { context: bypassLoadingInterceptor() });
   }
 
   register(userSignup: IUserSignUp) {
-    return this.http.post<User>(USER_SIGN_UP, userSignup);
+    return this.http.post<User>(USER_SIGN_UP, userSignup, { context: bypassLoadingInterceptor() });
   }
 
   verifyOtp(email: string, otp: string): Observable<User> {
-    return this.http.post<User>(USER_VERIFY_OTP, { email, otp }).pipe(
+    return this.http.post<User>(USER_VERIFY_OTP, { email, otp }, { context: bypassLoadingInterceptor() }).pipe(
       tap({
         next: (user) => {
           this.setUserToLocalStorage(user);

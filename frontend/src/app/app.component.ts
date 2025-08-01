@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'frontend';
   isSearch: boolean = false;
+  isMyAccount: boolean = false;
   showLayout = true;
 
   constructor(private router: Router) {
@@ -22,6 +23,7 @@ export class AppComponent {
         this.showLayout = event.urlAfterRedirects !== '/';
       }
       this.isSearch = this.router.url.startsWith('/search');
+      this.isMyAccount = this.router.url.startsWith('/my-account');
     })
   }
 }

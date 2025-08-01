@@ -3,13 +3,13 @@ import { Order } from '../../../shared/models/Order';
 import { ActivatedRoute } from '@angular/router';
 import { OrderService } from '../../../services/order.service';
 import { OrderItemsComponent } from '../../partials/order-items/order-items.component';
-import { MapComponent } from '../../partials/map/map.component';
 import { TitleComponent } from '../../partials/title/title.component';
 import { CommonModule } from '@angular/common';
+import { MapComponent } from '../../partials/map/map.component';
 
 @Component({
   selector: 'app-order-track-page',
-  imports: [OrderItemsComponent, MapComponent, TitleComponent, CommonModule],
+  imports: [OrderItemsComponent, TitleComponent, CommonModule, MapComponent],
   templateUrl: './order-track-page.component.html',
   styleUrl: './order-track-page.component.css'
 })

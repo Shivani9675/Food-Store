@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Order } from '../shared/models/Order';
-import { ORDER_CREATE_URL, ORDER_NEW_FOR_CURRENT_USER_URL, ORDER_PAY_URL, ORDER_TRACK_URL } from '../shared/constants/urls';
+import { ALL_ORDERS_URL, ORDER_CREATE_URL, ORDER_NEW_FOR_CURRENT_USER_URL, ORDER_PAY_URL, ORDER_TRACK_URL } from '../shared/constants/urls';
 import { Observable } from 'rxjs';
+import { User } from '../shared/models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +28,7 @@ export class OrderService {
     return this.http.get<Order>(ORDER_TRACK_URL + id);
   }
 
+  getAllOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(ALL_ORDERS_URL);
+  }
 }

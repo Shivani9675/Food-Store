@@ -53,6 +53,11 @@ router.get('/track/:id', asyncHandler(async (req, res) => {
     res.send(order);
 }))
 
+router.get('/getAllOrders', asyncHandler(async (req, res) => {
+    const orders = await OrderModel.find().sort({ createdAt: -1 });
+    res.send(orders);
+}));
+
 module.exports = router;
 
 async function getNewOrderForCurrentUser(req) {

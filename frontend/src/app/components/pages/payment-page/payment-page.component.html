@@ -1,6 +1,6 @@
 <div class="container">
     <div class="content">
-        <app-title title="Order Summary" fontSize="1.6rem"></app-title>
+        <app-title title="Order Summary" fontSize="1.6rem"  margin="1rem 0 0.4rem 0"></app-title>
         <div class="summary">
             <div>
                 <h3>Name:</h3>
@@ -14,7 +14,7 @@
         <order-items-list [order]="order"></order-items-list>
     </div>
     <div class="map">
-        <app-title title="Shipping Address" fontSize="1.6rem"></app-title>
+        <app-title title="Shipping Address" fontSize="1.6rem" margin="10px 10px 28px 0"></app-title>
         <map [order]="order" [readonly]="true"></map>
     </div>
     <div class="buttons-container">

@@ -1,0 +1,257 @@
+.my-account-main-wrapper {
+    padding: 0 20px;
+    position: relative;
+    background: #37718e;
+    min-height: 80vh;
+}
+
+.profile-main-wrapper {
+    padding-top: 33px;
+    max-width: 1200px;
+    min-width: 1200px;
+    position: relative;
+    margin: 60px auto 30px;
+}
+
+.profile-wrapper {
+    color: #fff;
+    margin-bottom: 37px;
+    margin-top: 37px;
+    position: relative;
+}
+
+.edit-profile-btn-wrapper {
+    border: 1px solid rgba(255, 255, 255, .6);
+    padding: 12px 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.edit-btn {
+    float: right;
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+}
+
+.edit-btn:hover {
+    /* background: #e6e6e6; */
+    background: white;
+    color: #37718e;
+}
+
+.user-name {
+    letter-spacing: 0.25px;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.user-info {
+    margin-top: 2px;
+    font-size: 16px;
+}
+
+.m-l-15 {
+    margin-left: 15px;
+}
+
+.m-l-15::before {
+    content: ".";
+    margin-right: 15px;
+}
+
+.fixed-header-wrapper {
+    padding: 0 20px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 3;
+    margin: 0px auto;
+    /* background: #fff;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1); */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+}
+
+.sticky-header {
+    background: #35728a;
+    color: #fff;
+    box-shadow: none;
+}
+
+.translate-class {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    animation: _2GUMa .2s ease;
+}
+
+.sticky-translate-class {
+    animation: _2ebqt .2s ease;
+}
+
+.sticky-header-section {
+    max-width: 1200px;
+    min-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    /* color: #fff; */
+}
+
+.f-g {
+    flex-grow: 1;
+}
+
+.sticky-user-name {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.sticky-user-info {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sticky-edit-profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.sticky-edit-profile-btn {
+    border: 1px solid rgba(255, 255, 255, .6);
+    padding: 12px 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.my-stuff-wrapper {
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .15);
+    background: #fff;
+    width: 1300px;
+    margin: 0 auto;
+    contain: layout;
+    position: relative;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+.my-stuff-left-wrapper {
+    width: calc((100vw - 1300px) / 2 + 2px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 1px;
+    background: #fff;
+    opacity: 0;
+    z-index: 1;
+    contain: layout;
+    will-change: opacity;
+    transition: opacity .3s ease;
+    transform: translateX(-100%);
+}
+
+.my-stuff-right-wrapper {
+    width: calc((100vw - 1300px) / 2);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity .3s ease;
+    will-change: transform;
+    contain: layout;
+    transform: translateX(100%);
+}
+
+.opacity-1 {
+    opacity: 1;
+}
+
+.white-background {
+    background: white;
+}
+
+.my-stuff-main-wrapper {
+    max-width: 1200px;
+    min-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+    contain: layout;
+}
+
+.stuff-main-wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.p-t-0 {
+    padding-top: 0px !important;
+}
+
+.d-f {
+    display: flex;
+}
+
+.left-section {
+    min-width: 260px;
+    background: #edf1f7;
+}
+
+.right-section {
+    flex: 1;
+    background: #fff;
+    padding: 20px 0 0 50px;
+    position: relative;
+    min-height: 80vh;
+}
+
+.left-section ul {
+    padding: 20px 0;
+    position: sticky;
+    top: 80px;
+    margin-top: 0;
+}
+
+.left {
+    padding: 25px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+}
+
+.active {
+    background: #fff;
+    color: #02060c;
+    font-weight: 600 !important;
+}
+
+.left a {
+    margin-left: 40px;
+    font-size: 16px;
+    color: rgba(2, 6, 12, .8);
+    font-weight: 500;
+}
+
+.left a:hover {
+    color: #02060c;
+    font-weight: 600;
+}

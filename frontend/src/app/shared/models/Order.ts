@@ -10,5 +10,7 @@ export class Order {
     addressLatLng?:LatLng
     paymentId!: string;
     createdAt!: string;
+    updatedAt!: string;
     status!: string;
+    isExpanded!: boolean;
 }

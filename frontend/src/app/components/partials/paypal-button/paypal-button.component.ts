@@ -51,20 +51,17 @@ export class PaypalButtonComponent {
               next: (orderId) => {
                 this.cartService.clearCart();
                 this.router.navigateByUrl('/track/' + orderId);
-                this.toastrService.success(
-                  'Payment Saved Successfully',
-                  'Success'
-                );
+                this.toastrService.success('Order confirmed! We’re cooking up something special for you.');
               },
               error: (error) => {
-                this.toastrService.error('Payment Save Failed', 'Error');
+                this.toastrService.error('Order Failed');
               }
             }
           );
         },
 
         onError: (err: any) => {
-          this.toastrService.error('Payment Failed', 'Error');
+          this.toastrService.error('Payment Failed');
           console.log(err);
         },
       })

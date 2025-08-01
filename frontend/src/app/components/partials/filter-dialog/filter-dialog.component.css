@@ -1,0 +1,78 @@
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 0.5rem 1rem;
+    border-bottom: 1px solid #ddd;
+    background: white;
+
+    h2 {
+        color: #02060CBF;
+        margin: 5px;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    button {
+        color: #666;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+
+.dialog-container {
+    display: flex;
+    /* width: 900px; */
+    /* min-height: 400px;
+    max-height: 80vh; */
+}
+
+.filter-left {
+    width: 250px;
+    border-right: 1px solid #ddd;
+    background: white;
+    padding: 0 1rem;
+
+    mat-list-item {
+        cursor: pointer;
+        padding: 10px;
+        font-weight: 500;
+
+        &.active {
+            color: #ff4d00;
+        }
+    }
+}
+
+.filter-right {
+    flex: 1;
+    padding: 0 1rem;
+    overflow-y: auto;
+    background: white;
+
+    h3 {
+        color: #02060C99;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+}
+
+.dialog-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    background: white;
+
+    button {
+        min-width: 120px;
+    }
+
+    button:last-child {
+        background-color: #ce0000;
+        color: white;
+    }
+}

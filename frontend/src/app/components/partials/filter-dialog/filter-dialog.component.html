@@ -1,0 +1,64 @@
+<div class="dialog-header">
+    <h2>Filter</h2>
+    <button mat-icon-button (click)="dialogRef.close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<div class="dialog-container">
+
+    <div class="filter-left">
+        <mat-nav-list>
+            <mat-list-item *ngFor="let option of filterOptions" [class.active]="selectedOption === option.key"
+                (click)="selectOption(option.key)">
+                {{ option.label }}
+            </mat-list-item>
+        </mat-nav-list>
+    </div>
+
+    <div class="filter-right">
+        <ng-container [ngSwitch]="selectedOption">
+            <div *ngSwitchCase="'sort'">
+                <h3>SORT BY</h3>
+                <mat-radio-group [(ngModel)]="filters.sort">
+                    <mat-radio-button value="relevance">Relevance (Default)</mat-radio-button><br />
+                    <mat-radio-button value="delivery">Delivery Time</mat-radio-button><br />
+                    <mat-radio-button value="rating">Rating</mat-radio-button><br />
+                    <mat-radio-button value="cost_low">Cost: Low to High</mat-radio-button><br />
+                    <mat-radio-button value="cost_high">Cost: High to Low</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <div *ngSwitchCase="'delivery'">
+                <h3>DELIVERY TIME</h3>
+                <mat-checkbox [(ngModel)]="filters.fastDelivery">10 Mins Delivery</mat-checkbox>
+            </div>
+
+            <div *ngSwitchCase="'veg'">
+                <h3>VEG/NON-VEG</h3>
+                <mat-slide-toggle [(ngModel)]="filters.vegOnly">Veg Only</mat-slide-toggle>
+            </div>
+
+            <div *ngSwitchCase="'ratings'">
+                <h3>RATINGS</h3>
+                <mat-radio-group [(ngModel)]="filters.rating">
+                    <mat-radio-button value="4">4★ & above</mat-radio-button><br />
+                    <mat-radio-button value="3">3★ & above</mat-radio-button><br />
+                </mat-radio-group>
+            </div>
+
+            <div *ngSwitchCase="'cost'">
+                <h3>COST FOR TWO</h3>
+                <mat-radio-group [(ngModel)]="filters.cost">
+                    <mat-radio-button value="low">Below ₹200</mat-radio-button><br />
+                    <mat-radio-button value="medium">₹200 – ₹500</mat-radio-button><br />
+                    <mat-radio-button value="high">Above ₹500</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<div class="dialog-footer">
+    <button mat-button (click)="clearFilters()">Clear Filters</button>
+    <button mat-button (click)="applyFilters()">Apply</button>
+</div>

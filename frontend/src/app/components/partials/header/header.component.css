@@ -1,10 +1,12 @@
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   background: white;
   padding: 0;
   box-shadow: 0 15px 40px -20px rgba(40, 44, 63, .15);
   pointer-events: auto;
+  width: 100%;
+  transition: opacity 0.3s ease;
 }
 
 .beforeloginheader {
@@ -34,7 +36,7 @@ a:hover {
 }
 
 .container {
-  margin: 0 auto;
+  margin: 0 80px;
   display: flex;
   justify-content: space-between;
 }

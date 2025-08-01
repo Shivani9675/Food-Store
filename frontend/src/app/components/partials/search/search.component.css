@@ -1,5 +1,5 @@
 .search-wrapper {
-  position: sticky;
+  position: fixed;
   width: 100%;
   left: 0;
   top: 74px;
@@ -65,7 +65,7 @@ ul {
   align-items: center;
   flex-wrap: wrap;
   list-style-type: none;
-  margin: 0px 112px;
+  margin: 200px 112px;
   padding: 0;
   margin-bottom: 60px;
 }
@@ -424,6 +424,7 @@ h2 {
 .slider-container {
   padding: 16px;
   overflow: hidden;
+  margin-top: 180px;
 }
 
 .m-l-112 {

@@ -12,7 +12,7 @@
 
 .find-location {
     position: absolute;
-    margin: auto;
+    margin: 10px auto;
     width: 15rem;
     min-height: 3rem;
     font-size: 1.2rem;
@@ -22,6 +22,11 @@
     z-index: 1000;
     background-color: #ffffff7c;
     cursor: pointer;
+}
+
+.find-location h5 {
+    font-size: 18px;
+    margin: 0;
 }
 
 .find-location:hover {

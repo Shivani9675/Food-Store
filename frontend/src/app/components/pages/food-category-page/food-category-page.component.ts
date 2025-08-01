@@ -9,10 +9,12 @@ import { Observable } from 'rxjs';
 import { CartService } from '../../../services/cart.service';
 import { Cart } from '../../../shared/models/Cart';
 import { ToastrService } from 'ngx-toastr';
+import { FilterDialogComponent } from '../../partials/filter-dialog/filter-dialog.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-food-category-page',
-  imports: [CommonModule],
+  imports: [CommonModule, MatDialogModule,],
   templateUrl: './food-category-page.component.html',
   styleUrl: './food-category-page.component.css'
 })
@@ -29,7 +31,8 @@ export class FoodCategoryPageComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private foodService: FoodService,
     private cartService: CartService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private dialog: MatDialog
   ) {
     let foodsObservable: Observable<Food[]>;
 
@@ -118,5 +121,21 @@ export class FoodCategoryPageComponent implements OnInit {
 
   closeFoodDetailDialog() {
     this.selectedSubCategory = null;
+  }
+
+
+  openFilterDialog(): void {
+    const dialogRef = this.dialog.open(FilterDialogComponent, {
+      panelClass: 'custom-dialog',
+      minWidth: '900px',
+      minHeight: '60%'
+      // width: '900px'
+    });
+
+    dialogRef.afterClosed().subscribe(filters => {
+      if (filters) {
+        console.log('Selected Filters:', filters);
+      }
+    });
   }
 }

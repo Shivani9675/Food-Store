@@ -75,6 +75,18 @@ export class FoodsComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit() {
+    this.activatedRoute.queryParams.subscribe(params => {
+      const scrollTo = params['scrollTo'];
+      if (scrollTo === 'offers') {
+        setTimeout(() => {
+          this.offerSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
+          history.replaceState(null, '', this.activatedRoute.snapshot.routeConfig?.path ?? '/foods');
+        }, 200);
+      }
+    });
+  }
+
   changeQuantity(food: Food) {
     this.cartService.addToCart(food);
     this.toastrService.success('Item has been added to your cart successfully');
@@ -132,7 +144,11 @@ export class FoodsComponent implements OnInit {
 
   scrollToOffers() {
     if (this.offerSection) {
-      this.offerSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.scrollTo({
+        top: this.offerSection.nativeElement.offsetTop - 70, 
+        behavior: 'smooth'
+      });
+      // this.offerSection.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 }

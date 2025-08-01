@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Food } from '../../../shared/models/food';
 import { FoodService } from '../../../services/food.service';
 import { CartService } from '../../../services/cart.service';
@@ -23,29 +22,29 @@ export class SearchComponent implements OnInit {
   categories?: Categories[];
 
   constructor(
-    activatedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private router: Router,
     private foodService: FoodService,
     private cartService: CartService,
     private toastrService: ToastrService
   ) {
-    let foodsObservable: Observable<Food[]>;
-    activatedRoute.params.subscribe((params) => {
-      if (params['searchTerm']) {
-        this.searchTerm = params['searchTerm']
-        foodsObservable = this.foodService.getAllFoodsBySearchTerm(params['searchTerm']);
-      }
-      foodsObservable.subscribe((foods) => {
-        this.foods = foods;
-        console.log(this.foods)
-      })
-    })
-    cartService.getCartObservable().subscribe((cart) => {
-      this.cart = cart;
-    })
   }
-
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['searchTerm']) {
+        this.searchTerm = params['searchTerm'];
+        console.log(this.searchTerm);
+        this.foodService.getAllFoodsBySearchTerm(this.searchTerm).subscribe((foods) => {
+          this.foods = foods;
+          console.log(this.foods.length);
+        });
+      }
+    });
+
+    this.cartService.getCartObservable().subscribe((cart) => {
+      this.cart = cart;
+    });
+
     this.foodService.getAllCategories().subscribe(categories => {
       this.categories = categories;
     });

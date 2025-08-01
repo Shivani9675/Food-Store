@@ -9,10 +9,11 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { ToastrService } from 'ngx-toastr';
 import { SignUpComponent } from '../sign-up/sign-up.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-sign-in',
-  imports: [CommonModule, FormsModule, MatDialogModule, MatInputModule, MatProgressBarModule, MatIconModule],
+  imports: [CommonModule, FormsModule, MatDialogModule, MatInputModule, MatProgressBarModule, MatIconModule, MatProgressSpinnerModule],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css'
 })
@@ -21,6 +22,7 @@ export class SignInComponent implements OnInit {
   otp = '';
   email: string = '';
   otpSent = false;
+  isLoading = false; 
 
   constructor(
     private userService: UserService,
@@ -41,13 +43,16 @@ export class SignInComponent implements OnInit {
   }
 
   login() {
+    this.isLoading = true;
     this.userService.login({ email: this.email }).subscribe({
       next: (res: any) => {
         console.log({ res });
+        this.isLoading = false;
         this.otpSent = true;
         this.toastrService.success(res.message || 'OTP sent successfully');
       },
       error: (err) => {
+        this.isLoading = false;
         const message = err?.error?.message || 'Failed to send OTP.';
         this.toastrService.error(message);
       }
@@ -55,13 +60,16 @@ export class SignInComponent implements OnInit {
   }
 
   verifyOtp() {
+    this.isLoading = true;
     this.userService.verifyOtp(this.email, this.otp).subscribe({
       next: (res: any) => {
+        this.isLoading = false;
         this.dialogRef.close();
         this.toastrService.success(`Welcome to the Food Mine ${res.name}`);
         this.router.navigateByUrl('foods');
       },
       error: (err) => {
+        this.isLoading = false;
         const message = err?.error?.message || 'OTP verification failed.';
         this.toastrService.error(message);
       }

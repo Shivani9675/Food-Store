@@ -3,10 +3,12 @@ import { Cart } from '../../../shared/models/Cart';
 import { CartService } from '../../../services/cart.service';
 import { CartItem } from '../../../shared/models/CartItem';
 import { TitleComponent } from "../../partials/title/title.component";
-import { RouterLink, RouterModule } from '@angular/router';
+import { Route, Router, RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from "../../partials/not-found/not-found.component";
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../../../services/user.service';
+import { User } from '../../../shared/models/user';
 
 @Component({
   selector: 'app-cart-page',
@@ -15,11 +17,22 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './cart-page.component.css'
 })
 export class CartPageComponent {
+
+  user!: User;
   cart!: Cart;
-  constructor(private cartService: CartService, private toastrService: ToastrService) {
+
+  constructor(
+    private cartService: CartService,
+    private toastrService: ToastrService,
+    private userService: UserService,
+    private router: Router
+  ) {
     cartService.getCartObservable().subscribe((cart) => {
       this.cart = cart;
       console.log(cart)
+    })
+    this.userService.userObservable.subscribe((newUser) => {
+      this.user = newUser;
     })
   }
 
@@ -52,5 +65,17 @@ export class CartPageComponent {
       }
     }
     this.toastrService.success('Quantity of Item has been reduced');
+  }
+
+  onClickCheckout() {
+    if (this.isAuth) {
+      this.router.navigateByUrl('checkout');
+    } else {
+      this.toastrService.warning('Please log in before proceeding to checkout.');
+    }
+  }
+
+  get isAuth() {
+    return this.user.token;
   }
 }

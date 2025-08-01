@@ -1,0 +1,66 @@
+<div class="my-account-main-wrapper">
+    <!-- Original My-Account Header -->
+    <div *ngIf="!showStickyHeader" class="profile-main-wrapper">
+        <div class="profile-wrapper">
+            <h5 class="edit-profile-btn-wrapper edit-btn">Edit profile</h5>
+            <div class="user-name">{{user.name}}</div>
+            <div class="user-info">
+                <span>{{user.phonenumber}}</span>
+                <span class="m-l-15">{{user.email}}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky My-Account Header -->
+    <div *ngIf="showStickyHeader" class="fixed-header-wrapper sticky-header sticky-translate-class">
+        <div class="sticky-header-section">
+            <div class="f-g">
+                <div class="sticky-user-name">{{user.name}}</div>
+                <div class="sticky-user-info">{{user.phonenumber}} . {{user.email}}</div>
+            </div>
+            <div class="sticky-edit-profile-wrapper">
+                <div class="sticky-edit-profile-btn">Edit Profile</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-stuff-wrapper" [ngClass]="{ 'mt-80': showStickyHeader }" #myStuffWrapper>
+        <div class="my-stuff-left-wrapper" [ngClass]="{ 'opacity-1': showWhiteBackground }"></div>
+        <div class="my-stuff-main-wrapper stuff-main-wrapper" [ngClass]="{ 'p-t-0': showStickyHeader }">
+            <div class="d-f" #mySubStuffWrapper>
+                <div class="left-section">
+                    <ul>
+                        <li class="left" routerLink="orders" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            <a routerLinkActive="active">Orders</a>
+                        </li>
+                        <li class="left" routerLink="food-mine-one" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            <a routerLinkActive="active">Foodmine One</a>
+                        </li>
+                        <li class="left" routerLink="favourites" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            <a routerLinkActive="active">Favourites</a>
+                        </li>
+                        <li class="left" routerLink="payments" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            <a routerLinkActive="active">Payments</a>
+                        </li>
+                        <li class="left" routerLink="addresses" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            <a routerLinkActive="active">Addresses</a>
+                        </li>
+                        <li class="left" routerLink="settings" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
+                            <a routerLinkActive="active">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-section">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+        <div class="my-stuff-right-wrapper" [ngClass]="{ 'opacity-1': showWhiteBackground }"></div>
+    </div>
+</div>

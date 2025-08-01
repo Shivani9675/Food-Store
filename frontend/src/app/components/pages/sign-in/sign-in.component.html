@@ -29,8 +29,14 @@
       </div>
     </div>
 
-    <button *ngIf="!otpSent" class="login-button" (click)="login()"><span>Login</span></button>
-    <button *ngIf="otpSent" class="login-button" (click)="verifyOtp()"><span>Verify otp</span></button>
+    <button *ngIf="!otpSent" class="login-button" (click)="login()">
+      <span *ngIf="!isLoading">Login</span>
+      <mat-spinner *ngIf="isLoading" diameter="24"></mat-spinner>
+    </button>
+    <button *ngIf="otpSent" class="login-button" (click)="verifyOtp()">
+      <span *ngIf="!isLoading">Verify otp</span>
+      <mat-spinner *ngIf="isLoading" diameter="24"></mat-spinner>
+    </button>
 
     <p class="terms-text" *ngIf="!otpSent">
       By clicking on Login, I accept the
